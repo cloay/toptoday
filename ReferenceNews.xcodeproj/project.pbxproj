@@ -16,6 +16,9 @@
 		DA264D11163976CF00FAB77A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DA264D10163976CF00FAB77A /* Default.png */; };
 		DA264D13163976CF00FAB77A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA264D12163976CF00FAB77A /* Default@2x.png */; };
 		DA264D15163976CF00FAB77A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA264D14163976CF00FAB77A /* Default-568h@2x.png */; };
+		DA264D1D1639773700FAB77A /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA264D1C1639773700FAB77A /* MainWindow.xib */; };
+		DA264D2616397C7900FAB77A /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA264D2416397C7900FAB77A /* HomeViewController.m */; };
+		DA264D2716397C7900FAB77A /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA264D2516397C7900FAB77A /* HomeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,10 @@
 		DA264D10163976CF00FAB77A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		DA264D12163976CF00FAB77A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		DA264D14163976CF00FAB77A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		DA264D1C1639773700FAB77A /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		DA264D2316397C7900FAB77A /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		DA264D2416397C7900FAB77A /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		DA264D2516397C7900FAB77A /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +85,9 @@
 		DA264D04163976CF00FAB77A /* ReferenceNews */ = {
 			isa = PBXGroup;
 			children = (
-				DA264D0D163976CF00FAB77A /* AppDelegate.h */,
-				DA264D0E163976CF00FAB77A /* AppDelegate.m */,
+				DA264D1F16397C3000FAB77A /* Public */,
+				DA264D1E16397C2200FAB77A /* Controllers */,
+				DA264D1B1639770600FAB77A /* Root */,
 				DA264D05163976CF00FAB77A /* Supporting Files */,
 			);
 			path = ReferenceNews;
@@ -97,6 +105,57 @@
 				DA264D14163976CF00FAB77A /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DA264D1B1639770600FAB77A /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				DA264D0D163976CF00FAB77A /* AppDelegate.h */,
+				DA264D0E163976CF00FAB77A /* AppDelegate.m */,
+				DA264D1C1639773700FAB77A /* MainWindow.xib */,
+			);
+			name = Root;
+			sourceTree = "<group>";
+		};
+		DA264D1E16397C2200FAB77A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DA264D2216397C5700FAB77A /* Home */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		DA264D1F16397C3000FAB77A /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				DA264D2116397C4700FAB77A /* Constants */,
+				DA264D2016397C3F00FAB77A /* Utils */,
+			);
+			name = Public;
+			sourceTree = "<group>";
+		};
+		DA264D2016397C3F00FAB77A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		DA264D2116397C4700FAB77A /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
+		DA264D2216397C5700FAB77A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DA264D2316397C7900FAB77A /* HomeViewController.h */,
+				DA264D2416397C7900FAB77A /* HomeViewController.m */,
+				DA264D2516397C7900FAB77A /* HomeViewController.xib */,
+			);
+			name = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +213,8 @@
 				DA264D11163976CF00FAB77A /* Default.png in Resources */,
 				DA264D13163976CF00FAB77A /* Default@2x.png in Resources */,
 				DA264D15163976CF00FAB77A /* Default-568h@2x.png in Resources */,
+				DA264D1D1639773700FAB77A /* MainWindow.xib in Resources */,
+				DA264D2716397C7900FAB77A /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +227,7 @@
 			files = (
 				DA264D0B163976CF00FAB77A /* main.m in Sources */,
 				DA264D0F163976CF00FAB77A /* AppDelegate.m in Sources */,
+				DA264D2616397C7900FAB77A /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,4 +11,9 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import "CLog.h"
+    #import "CColor.h"
+    #import "Constant.h"
+    #import "MBProgressHUD.h"
+    #import "MKInfoPanel.h"
 #endif

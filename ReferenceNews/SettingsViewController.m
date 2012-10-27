@@ -19,6 +19,7 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        
     }
     return self;
 }
@@ -35,12 +36,13 @@
 
     self.navigationController.navigationBar.tintColor = NAV_BAR_COLOR;
     settings = [NSUserDefaults standardUserDefaults];
-    
     UILabel * copyLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 30)];
     copyLabel.textColor = [UIColor grayColor];
+    [copyLabel setBackgroundColor:[UIColor clearColor]];
     copyLabel.textAlignment = NSTextAlignmentCenter;
     [copyLabel setFont:[UIFont systemFontOfSize:14]];
     copyLabel.text = @"Copyright © 2012 Cloay. All Rights Reserved.";
+    
     self.tableView.tableFooterView = copyLabel;
 }
 
@@ -102,14 +104,14 @@
     static NSString *CellIdentifier = @"SettingsCellIdentifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     }
     
     // Configure the cell...
     NSInteger section = [indexPath section];
     NSInteger row = [indexPath row];
     
-    UISwitch *switchBtn = [[UISwitch alloc] initWithFrame:CGRectMake(200, 0, 50, 25)];
+    UISwitch *switchBtn = [[UISwitch alloc] initWithFrame:CGRectMake(210, 8, 50, 25)];
     [switchBtn addTarget:self action:@selector(switchBtnValueChanged:) forControlEvents:UIControlEventValueChanged];
     [switchBtn setOn:YES];
     //读取用户设置的状态，如果没有设置，默认为打开YES

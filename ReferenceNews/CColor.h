@@ -20,5 +20,5 @@ alpha:(a)]
 #define HSVACOLOR(h,s,v,a) [UIColor colorWithHue:(h) saturation:(s) value:(v) alpha:(a)]
 
 #define RGBA(r,g,b,a) (r)/255.0, (g)/255.0, (b)/255.0, (a)
-#define NAV_BAR_COLOR [UIColor colorWithRed:154/255.0 green:47/255.0 blue:44/255.0 alpha:1]
+#define NAV_BAR_COLOR [UIColor colorWithRed:104/255.0 green:11/255.0 blue:1/255.0 alpha:1]
 #endif

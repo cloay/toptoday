@@ -147,7 +147,13 @@
 - (IBAction)switchBtnValueChanged:(id)sender{
     UISwitch *switchBtn = (UISwitch *)sender;
     [settings setBool:switchBtn.isOn forKey:KNOTIFICATION];
+    if (switchBtn.isOn) {//生成通知
+        
+    }else{//关闭通知
+        
+    }
 }
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

@@ -8,6 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
+#define CHINATAG 0
+#define WORLDTAG 1
+#define FINANCIALTAG 2
+#define VIEWTAG 3
+#define MILITARYTAG 4
+#define TANWANTAG 5
+#define SEECHINATAG 6
+#define HOTNEWSTAG 7
+#define SERVER @"http://app.cankaoxiaoxi.com"
+
 @interface Constant : NSObject
 
+//获取标题
++ (NSString *)getTitleWithTag:(NSInteger)tag;
+
+//获取分类url
++ (NSString *)getUrlWithTag:(NSInteger)tag;
 @end

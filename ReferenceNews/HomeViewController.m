@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "NewsViewController.h"
 
 @interface HomeViewController ()
 
@@ -21,6 +22,15 @@
         // Custom initialization
     }
     return self;
+}
+
+- (IBAction)homeButtonDidPressed:(id)sender{
+    UIButton *button = (UIButton *)sender;
+    NewsViewController *newsViewController = [[NewsViewController alloc] initWithNibName:@"NewsViewController" bundle:nil];
+    CLog(@"tag----->%i", button.tag);
+    newsViewController.tag = button.tag;
+    newsViewController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:newsViewController animated:YES];
 }
 
 - (void)viewDidLoad

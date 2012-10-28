@@ -17,7 +17,6 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
-    self.tabBarController.tabBar.tintColor = NAV_BAR_COLOR;
     self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
     return YES;

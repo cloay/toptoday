@@ -33,6 +33,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.navigationController.navigationBar.tintColor = NAV_BAR_COLOR;
+    CLog(@"see_china_url------->%@", [Constant getTitleWithTag:SEECHINATAG]);
 }
 
 - (void)didReceiveMemoryWarning

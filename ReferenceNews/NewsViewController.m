@@ -1,19 +1,20 @@
 //
-//  HotNewsViewController.m
+//  NewsViewController.m
 //  ReferenceNews
 //
-//  Created by cloay on 12-10-27.
+//  Created by cloay on 12-10-28.
 //  Copyright (c) 2012年 Cloay. All rights reserved.
 //
 
-#import "HotNewsViewController.h"
+#import "NewsViewController.h"
 
-@interface HotNewsViewController ()
+@interface NewsViewController ()
 
 @end
 
-@implementation HotNewsViewController
+@implementation NewsViewController
 
+@synthesize tag;
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -32,8 +33,8 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.navigationController.navigationBar.tintColor = NAV_BAR_COLOR;
-    CLog(@"hot_url------->%@", [Constant getTitleWithTag:HOTNEWSTAG]);
+    self.title = [Constant getTitleWithTag:self.tag];
+    CLog(@"Url------>%@", [Constant getUrlWithTag:self.tag]);
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,14 +47,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-
     // Return the number of sections.
     return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
     // Return the number of rows in the section.
     return 0;
 }

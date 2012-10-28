@@ -30,6 +30,10 @@
 		DA55F4E0163D5CDF00CABAA5 /* view_btn_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA55F4D4163D5CDF00CABAA5 /* view_btn_bg@2x.png */; };
 		DA55F4E1163D5CDF00CABAA5 /* world_btn_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = DA55F4D5163D5CDF00CABAA5 /* world_btn_bg.png */; };
 		DA55F4E2163D5CDF00CABAA5 /* world_btn_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA55F4D6163D5CDF00CABAA5 /* world_btn_bg@2x.png */; };
+		DA55F4E6163D631600CABAA5 /* libUMFeedback.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA55F4E3163D631600CABAA5 /* libUMFeedback.a */; };
+		DA55F4E7163D631600CABAA5 /* umFeedback.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DA55F4E4163D631600CABAA5 /* umFeedback.bundle */; };
+		DA55F4EA163D64E600CABAA5 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA55F4E8163D64E600CABAA5 /* libMobClickLibrary.a */; };
+		DA55F4EC163D650600CABAA5 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DA55F4EB163D650600CABAA5 /* libz.dylib */; };
 		DAF5093F163D227E005E27CE /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF5093D163D227E005E27CE /* NewsViewController.m */; };
 		DAF50940163D227E005E27CE /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAF5093E163D227E005E27CE /* NewsViewController.xib */; };
 		DAF50945163D37D4005E27CE /* icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = DAF50944163D37D4005E27CE /* icon2.png */; };
@@ -100,6 +104,12 @@
 		DA55F4D4163D5CDF00CABAA5 /* view_btn_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "view_btn_bg@2x.png"; sourceTree = "<group>"; };
 		DA55F4D5163D5CDF00CABAA5 /* world_btn_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = world_btn_bg.png; sourceTree = "<group>"; };
 		DA55F4D6163D5CDF00CABAA5 /* world_btn_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "world_btn_bg@2x.png"; sourceTree = "<group>"; };
+		DA55F4E3163D631600CABAA5 /* libUMFeedback.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMFeedback.a; sourceTree = "<group>"; };
+		DA55F4E4163D631600CABAA5 /* umFeedback.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = umFeedback.bundle; sourceTree = "<group>"; };
+		DA55F4E5163D631600CABAA5 /* UMFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMFeedback.h; sourceTree = "<group>"; };
+		DA55F4E8163D64E600CABAA5 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		DA55F4E9163D64E600CABAA5 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		DA55F4EB163D650600CABAA5 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		DAF5093C163D227E005E27CE /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		DAF5093D163D227E005E27CE /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		DAF5093E163D227E005E27CE /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
@@ -155,10 +165,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA55F4EC163D650600CABAA5 /* libz.dylib in Frameworks */,
 				DAFFD093163B9D0700AA9FE4 /* QuartzCore.framework in Frameworks */,
 				DA264CFF163976CF00FAB77A /* UIKit.framework in Frameworks */,
 				DA264D01163976CF00FAB77A /* Foundation.framework in Frameworks */,
 				DA264D03163976CF00FAB77A /* CoreGraphics.framework in Frameworks */,
+				DA55F4E6163D631600CABAA5 /* libUMFeedback.a in Frameworks */,
+				DA55F4EA163D64E600CABAA5 /* libMobClickLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +198,7 @@
 		DA264CFD163976CF00FAB77A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DA55F4EB163D650600CABAA5 /* libz.dylib */,
 				DAFFD092163B9D0700AA9FE4 /* QuartzCore.framework */,
 				DA264CFE163976CF00FAB77A /* UIKit.framework */,
 				DA264D00163976CF00FAB77A /* Foundation.framework */,
@@ -302,6 +316,13 @@
 			name = home;
 			sourceTree = "<group>";
 		};
+		DA55F568163D67BB00CABAA5 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Share;
+			sourceTree = "<group>";
+		};
 		DAF5093A163D224D005E27CE /* NewsListController */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,23 +401,19 @@
 		DAFFD058163B938400AA9FE4 /* UMeng */ = {
 			isa = PBXGroup;
 			children = (
+				DA55F568163D67BB00CABAA5 /* Share */,
 				DAFFD05B163B93AC00AA9FE4 /* Anlysis */,
 				DAFFD05A163B93A100AA9FE4 /* FeedBack */,
-				DAFFD059163B939000AA9FE4 /* share */,
 			);
 			name = UMeng;
-			sourceTree = "<group>";
-		};
-		DAFFD059163B939000AA9FE4 /* share */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = share;
 			sourceTree = "<group>";
 		};
 		DAFFD05A163B93A100AA9FE4 /* FeedBack */ = {
 			isa = PBXGroup;
 			children = (
+				DA55F4E3163D631600CABAA5 /* libUMFeedback.a */,
+				DA55F4E4163D631600CABAA5 /* umFeedback.bundle */,
+				DA55F4E5163D631600CABAA5 /* UMFeedback.h */,
 			);
 			name = FeedBack;
 			sourceTree = "<group>";
@@ -404,6 +421,8 @@
 		DAFFD05B163B93AC00AA9FE4 /* Anlysis */ = {
 			isa = PBXGroup;
 			children = (
+				DA55F4E8163D64E600CABAA5 /* libMobClickLibrary.a */,
+				DA55F4E9163D64E600CABAA5 /* MobClick.h */,
 			);
 			name = Anlysis;
 			sourceTree = "<group>";
@@ -562,6 +581,7 @@
 				DA55F4E0163D5CDF00CABAA5 /* view_btn_bg@2x.png in Resources */,
 				DA55F4E1163D5CDF00CABAA5 /* world_btn_bg.png in Resources */,
 				DA55F4E2163D5CDF00CABAA5 /* world_btn_bg@2x.png in Resources */,
+				DA55F4E7163D631600CABAA5 /* umFeedback.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,6 +675,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ReferenceNews/ReferenceNews-Prefix.pch";
 				INFOPLIST_FILE = "ReferenceNews/ReferenceNews-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/ReferenceNews\"",
+					"\"$(SRCROOT)/ReferenceNews/SDK\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -666,6 +691,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ReferenceNews/ReferenceNews-Prefix.pch";
 				INFOPLIST_FILE = "ReferenceNews/ReferenceNews-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/ReferenceNews\"",
+					"\"$(SRCROOT)/ReferenceNews/SDK\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

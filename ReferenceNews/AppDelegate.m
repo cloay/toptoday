@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "MobClick.h"
 
 @implementation AppDelegate
 @synthesize window;
@@ -19,6 +20,8 @@
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
+    
+    [MobClick startWithAppkey:UMKEY reportPolicy:REALTIME channelId:nil];
     return YES;
 }
 

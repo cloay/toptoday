@@ -7,7 +7,10 @@
 //
 
 #import "SettingsViewController.h"
+#import "UMFeedback.h"
+
 #define KNOTIFICATION @"SwitchStatus"
+
 @interface SettingsViewController ()
 
 @end
@@ -204,6 +207,26 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+    NSInteger section = [indexPath section];
+    NSInteger row = [indexPath row];
+    switch (section) {
+        case 0:
+            if (row == 0) { //分享
+            
+            }else{  //账号绑定
+            }
+            break;
+        case 1:
+            break;
+        case 2:
+            if (row == 0) {
+                [UMFeedback showFeedback:self withAppkey:UMKEY];
+            }else{//关于
+                
+            }
+        default:
+            break;
+    }
 }
 
 @end

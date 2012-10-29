@@ -8,6 +8,7 @@
 
 #import "SettingsViewController.h"
 #import "UMFeedback.h"
+#import "UMSocialService.h"
 
 #define KNOTIFICATION @"SwitchStatus"
 
@@ -212,8 +213,11 @@
     switch (section) {
         case 0:
             if (row == 0) { //分享
-            
+                UMSocialService *service = [[UMSocialService alloc] initWithDescriptor:@"SettingsShare"];
+                [service presentSocialViewController:UMViewControllerShareList];
             }else{  //账号绑定
+                UMSocialService *service = [[UMSocialService alloc] initWithDescriptor:@"Account"];
+                [service presentSocialViewController:UMViewControllerAccount];
             }
             break;
         case 1:

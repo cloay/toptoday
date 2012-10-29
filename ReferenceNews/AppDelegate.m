@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MobClick.h"
+#import "UMSocialService.h"
 
 @implementation AppDelegate
 @synthesize window;
@@ -21,6 +22,7 @@
     self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
     
+    [UMSocialService setAppKey:UMKEY];
     [MobClick startWithAppkey:UMKEY reportPolicy:REALTIME channelId:nil];
     return YES;
 }

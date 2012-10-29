@@ -136,6 +136,7 @@
 		DA106BE1163EB15400370C39 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA106BE0163EB15400370C39 /* MessageUI.framework */; };
 		DA106BE3163EB15E00370C39 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA106BE2163EB15E00370C39 /* MapKit.framework */; };
 		DA106BE9163EB38200370C39 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA106BE8163EB38200370C39 /* CoreLocation.framework */; };
+		DA106BED163EB6A700370C39 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = DA106BEC163EB6A700370C39 /* News.m */; };
 		DA2486BB163C016F000107F0 /* NotificationUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2486BA163C016F000107F0 /* NotificationUtil.m */; };
 		DA264CFF163976CF00FAB77A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA264CFE163976CF00FAB77A /* UIKit.framework */; };
 		DA264D01163976CF00FAB77A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA264D00163976CF00FAB77A /* Foundation.framework */; };
@@ -334,6 +335,8 @@
 		DA106BE0163EB15400370C39 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		DA106BE2163EB15E00370C39 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DA106BE8163EB38200370C39 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		DA106BEB163EB6A700370C39 /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
+		DA106BEC163EB6A700370C39 /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
 		DA2486B9163C016F000107F0 /* NotificationUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationUtil.h; sourceTree = "<group>"; };
 		DA2486BA163C016F000107F0 /* NotificationUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationUtil.m; sourceTree = "<group>"; };
 		DA264CFA163976CF00FAB77A /* ReferenceNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReferenceNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -585,6 +588,15 @@
 			path = SocialSDKXib;
 			sourceTree = "<group>";
 		};
+		DA106BEA163EB63D00370C39 /* Entiy */ = {
+			isa = PBXGroup;
+			children = (
+				DA106BEB163EB6A700370C39 /* News.h */,
+				DA106BEC163EB6A700370C39 /* News.m */,
+			);
+			name = Entiy;
+			sourceTree = "<group>";
+		};
 		DA264CEF163976CF00FAB77A = {
 			isa = PBXGroup;
 			children = (
@@ -666,6 +678,7 @@
 		DA264D1F16397C3000FAB77A /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				DA106BEA163EB63D00370C39 /* Entiy */,
 				DAF50941163D2FF8005E27CE /* ASIHttpRequest */,
 				DAFFD05D163B943A00AA9FE4 /* MBProgress */,
 				DAFFD05C163B942600AA9FE4 /* MKInfoPanel */,
@@ -1147,6 +1160,7 @@
 				DAFFD086163B9B0800AA9FE4 /* MKInfoPanel.m in Sources */,
 				DA2486BB163C016F000107F0 /* NotificationUtil.m in Sources */,
 				DAF5093F163D227E005E27CE /* NewsViewController.m in Sources */,
+				DA106BED163EB6A700370C39 /* News.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

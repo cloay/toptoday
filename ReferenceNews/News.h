@@ -14,7 +14,7 @@
 @property (nonatomic, readonly) NSString *title;
 
 //新闻日期
-@property (nonatomic, readonly) NSDate *newsDate;
+@property (nonatomic, readonly) NSString *newsDate;
 
 //概要
 @property (nonatomic, readonly) NSString *summary;

@@ -7,7 +7,8 @@
 //
 
 #import "NewsViewController.h"
-
+#import "News.h"
+ 
 @interface NewsViewController ()
 
 @end
@@ -35,6 +36,22 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.title = [Constant getTitleWithTag:self.tag];
     CLog(@"Url------>%@", [Constant getUrlWithTag:self.tag]);
+    newsArray = [[NSMutableArray alloc] init];
+    //获取新闻
+    [self getNews];
+}
+
+- (void)getNews{
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"正在加载...";
+    NSURL *url = [NSURL URLWithString:[Constant getUrlWithTag:self.tag]];
+    httpRequest = [ASIHTTPRequest requestWithURL:url];
+    [httpRequest setDelegate:self];
+    [httpRequest startAsynchronous];
+}
+
+- (void)dealloc{
+    [httpRequest clearDelegatesAndCancel];
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,25 +65,31 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 0;
+    return 1;
+}
+
+- (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 80;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 0;
+    return [newsArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"CellNews";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
     // Configure the cell...
-    
+    News *news = [newsArray objectAtIndex:[indexPath row]];
+    cell.textLabel.text = news.title;
+    cell.detailTextLabel.text = news.summary;
     return cell;
 }
 
@@ -122,4 +145,23 @@
      */
 }
 
+#pragma mark - ASIHTTPRequest delegate methods
+- (void)requestFinished:(ASIHTTPRequest *)request{
+    NSData *data = [[request responseString] dataUsingEncoding:NSUTF8StringEncoding];
+    XmlParseUtil *parseUtil = [[XmlParseUtil alloc] initWithData:data];
+    [parseUtil setDelegate:self];
+    [parseUtil startParse];
+}
+
+- (void)requestFailed:(ASIHTTPRequest *)request{
+    [MKInfoPanel showPanelInView:self.view type:MKInfoPanelTypeInfo title:@"提示" subtitle:@"加载数据失败，请稍后重试！" hideAfter:3];
+}
+
+#pragma mark - XmlParserUtil delegate
+- (void)xmlParseFinishedWithData:(NSArray *)data{
+    [newsArray addObjectsFromArray:data];
+    [self.tableView reloadData];
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    [MKInfoPanel showPanelInView:self.view type:MKInfoPanelTypeInfo title:@"提示" subtitle:[NSString stringWithFormat:@"共有%i条新闻更新！", [data count]] hideAfter:3];
+}
 @end

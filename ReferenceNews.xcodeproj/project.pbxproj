@@ -178,6 +178,7 @@
 		DAD4C4F7164005AA002DF588 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD4C4F6164005AA002DF588 /* CFNetwork.framework */; };
 		DAD4C4F9164005C1002DF588 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD4C4F8164005C1002DF588 /* SystemConfiguration.framework */; };
 		DAD4C4FB164005D8002DF588 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD4C4FA164005D8002DF588 /* Security.framework */; };
+		DAE3D85A164174DE001ECEAD /* DateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE3D859164174DE001ECEAD /* DateUtil.m */; };
 		DAF5093F163D227E005E27CE /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF5093D163D227E005E27CE /* NewsViewController.m */; };
 		DAF50940163D227E005E27CE /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAF5093E163D227E005E27CE /* NewsViewController.xib */; };
 		DAF50945163D37D4005E27CE /* icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = DAF50944163D37D4005E27CE /* icon2.png */; };
@@ -414,6 +415,8 @@
 		DAD4C4F6164005AA002DF588 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		DAD4C4F8164005C1002DF588 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		DAD4C4FA164005D8002DF588 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		DAE3D858164174DE001ECEAD /* DateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateUtil.h; sourceTree = "<group>"; };
+		DAE3D859164174DE001ECEAD /* DateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateUtil.m; sourceTree = "<group>"; };
 		DAF5093C163D227E005E27CE /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		DAF5093D163D227E005E27CE /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		DAF5093E163D227E005E27CE /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
@@ -742,6 +745,7 @@
 		DA264D2016397C3F00FAB77A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DAE3D857164174BC001ECEAD /* DateUtil */,
 				DAD4C4EA163FFEA8002DF588 /* XmlParseUtil */,
 				DAFFD052163B909200AA9FE4 /* CColor.h */,
 				DAFFD053163B910C00AA9FE4 /* CLog.h */,
@@ -821,6 +825,15 @@
 				DAD4C4EC163FFEE4002DF588 /* XmlParseUtil.m */,
 			);
 			name = XmlParseUtil;
+			sourceTree = "<group>";
+		};
+		DAE3D857164174BC001ECEAD /* DateUtil */ = {
+			isa = PBXGroup;
+			children = (
+				DAE3D858164174DE001ECEAD /* DateUtil.h */,
+				DAE3D859164174DE001ECEAD /* DateUtil.m */,
+			);
+			name = DateUtil;
 			sourceTree = "<group>";
 		};
 		DAF5093A163D224D005E27CE /* NewsListController */ = {
@@ -1261,6 +1274,7 @@
 				DAD4C4E4163FFE20002DF588 /* ASINetworkQueue.m in Sources */,
 				DAD4C4E9163FFE47002DF588 /* Reachability.m in Sources */,
 				DAD4C4ED163FFEE4002DF588 /* XmlParseUtil.m in Sources */,
+				DAE3D85A164174DE001ECEAD /* DateUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

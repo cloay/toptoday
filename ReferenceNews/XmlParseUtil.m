@@ -62,7 +62,6 @@
     if ([@"item" isEqualToString:elementName]) {
         News *news = [[News alloc] initWithDictionary:newsDic];
         [newsArray addObject:news];
-        CLog(@"news.title--->:%@", news.title);
         newsDic = nil;
     }
     

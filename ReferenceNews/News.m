@@ -17,7 +17,7 @@
     self = [super init];
     
     title = [dictionary objectForKey:@"title"];
-    newsDate = [NSDate dateWithTimeIntervalSince1970:[[dictionary objectForKey:@"pubDate"] integerValue]];
+    newsDate = [dictionary objectForKey:@"pubDate"];
     summary = [dictionary objectForKey:@"description"];
     urlStr = [dictionary objectForKey:@"link"];
     

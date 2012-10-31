@@ -8,14 +8,15 @@
 
 #import "NewsViewController.h"
 #import "News.h"
- 
+#import "DateUtil.h"
+
 @interface NewsViewController ()
 
 @end
 
 @implementation NewsViewController
 
-@synthesize tag;
+@synthesize tag, newsArray;
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -36,7 +37,8 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.title = [Constant getTitleWithTag:self.tag];
     CLog(@"Url------>%@", [Constant getUrlWithTag:self.tag]);
-    newsArray = [[NSMutableArray alloc] init];
+    self.newsArray = [[NSMutableArray alloc] init];
+    
     //获取新闻
     [self getNews];
 }
@@ -65,17 +67,27 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return [self.newsArray count];
 }
 
 - (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 80;
+    return 90.0;
+}
+
+- (float)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 20;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [newsArray count];
+    return 1;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section{
+    News *news = [newsArray objectAtIndex:section];
+    NSString *title = [DateUtil getFormatDateWithString:news.newsDate withformat:@"EEE','d' 'MMM' 'yyyy' 'HH':'mm':'ss zzz"];
+    return [NSString stringWithFormat:@"                                    %@", title];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -84,10 +96,12 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        [cell setBackgroundColor:[UIColor clearColor]];
+        [cell.detailTextLabel setNumberOfLines:3];
     }
     
     // Configure the cell...
-    News *news = [newsArray objectAtIndex:[indexPath row]];
+    News *news = [self.newsArray objectAtIndex:[indexPath section]];
     cell.textLabel.text = news.title;
     cell.detailTextLabel.text = news.summary;
     return cell;
@@ -154,12 +168,13 @@
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request{
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     [MKInfoPanel showPanelInView:self.view type:MKInfoPanelTypeInfo title:@"提示" subtitle:@"加载数据失败，请稍后重试！" hideAfter:3];
 }
 
 #pragma mark - XmlParserUtil delegate
 - (void)xmlParseFinishedWithData:(NSArray *)data{
-    [newsArray addObjectsFromArray:data];
+    [self.newsArray addObjectsFromArray:data];
     [self.tableView reloadData];
     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     [MKInfoPanel showPanelInView:self.view type:MKInfoPanelTypeInfo title:@"提示" subtitle:[NSString stringWithFormat:@"共有%i条新闻更新！", [data count]] hideAfter:3];

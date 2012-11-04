@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ASIHTTPRequest.h"
+#import "XmlParseUtil.h"
 
-@interface ChinaViewController : UITableViewController
+@interface ChinaViewController : UITableViewController<ASIHTTPRequestDelegate, XmlParseUtilDelegate>{
+    NSMutableArray *newsArray;
+    ASIHTTPRequest *httpRequest;
+}
 
+@property (nonatomic, retain) NSMutableArray *newsArray;
 @end

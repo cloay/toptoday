@@ -7,12 +7,17 @@
 //
 
 #import "HotNewsViewController.h"
+#import "News.h"
+#import "DateUtil.h"
+#import "MatchUtil.h"
+#import "ContentViewController.h"
 
 @interface HotNewsViewController ()
 
 @end
 
 @implementation HotNewsViewController
+@synthesize newsArray;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -34,6 +39,21 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.navigationController.navigationBar.tintColor = NAV_BAR_COLOR;
     CLog(@"hot_url------->%@", [Constant getTitleWithTag:HOTNEWSTAG]);
+    
+    self.newsArray = [[NSMutableArray alloc] init];
+    
+    //获取新闻
+    [self getNews];
+}
+
+
+- (void)getNews{
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"正在加载...";
+    NSURL *url = [NSURL URLWithString:[Constant getUrlWithTag:HOTNEWSTAG]];
+    httpRequest = [ASIHTTPRequest requestWithURL:url];
+    [httpRequest setDelegate:self];
+    [httpRequest startAsynchronous];
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,30 +66,50 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-
     // Return the number of sections.
-    return 0;
+    return [self.newsArray count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
     // Return the number of rows in the section.
-    return 0;
+    return 1;
+}
+
+- (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 90.0;
+}
+
+- (float)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 25;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section{
+    News *news = [newsArray objectAtIndex:section];
+    NSString *title = [DateUtil getFormatDateWithString:news.newsDate withformat:@"EEE','d' 'MMM' 'yyyy' 'HH':'mm':'ss zzz"];
+    return [NSString stringWithFormat:@"                                    %@", title];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"CellChinaNews";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        [cell setBackgroundColor:[UIColor clearColor]];
+        [cell.detailTextLabel setNumberOfLines:3];
     }
     
     // Configure the cell...
+    News *news = [self.newsArray objectAtIndex:[indexPath section]];
+    cell.textLabel.text = news.title;
     
+    NSString *result = [MatchUtil stringWithoutHtmltag:news.summary];
+    CLog(@"result----->%@", result);
+    cell.detailTextLabel.text = result;
     return cell;
 }
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -115,12 +155,32 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    ContentViewController *detailViewController = [[ContentViewController alloc] initWithNibName:@"ContentViewController" bundle:nil];
+    detailViewController.news = [newsArray objectAtIndex:[indexPath section]];
+    detailViewController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:detailViewController animated:YES];
+}
+
+
+#pragma mark - ASIHTTPRequest delegate methods
+- (void)requestFinished:(ASIHTTPRequest *)request{
+    NSData *data = [[request responseString] dataUsingEncoding:NSUTF8StringEncoding];
+    XmlParseUtil *parseUtil = [[XmlParseUtil alloc] initWithData:data];
+    [parseUtil setDelegate:self];
+    [parseUtil startParse];
+}
+
+- (void)requestFailed:(ASIHTTPRequest *)request{
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    [MKInfoPanel showPanelInView:self.view type:MKInfoPanelTypeError title:@"提示" subtitle:@"加载数据失败，请稍后重试！" hideAfter:3];
+}
+
+#pragma mark - XmlParserUtil delegate
+- (void)xmlParseFinishedWithData:(NSArray *)data{
+    [self.newsArray addObjectsFromArray:data];
+    [self.tableView reloadData];
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    [MKInfoPanel showPanelInView:self.view type:MKInfoPanelTypeInfo title:@"提示" subtitle:[NSString stringWithFormat:@"共有%i条新闻更新！", [data count]] hideAfter:3];
 }
 
 @end

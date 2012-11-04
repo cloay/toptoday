@@ -45,7 +45,7 @@
     [copyLabel setBackgroundColor:[UIColor clearColor]];
     copyLabel.textAlignment = NSTextAlignmentCenter;
     [copyLabel setFont:[UIFont systemFontOfSize:14]];
-    copyLabel.text = @"Copyright © 2012 Cloay. All Rights Reserved.";
+    copyLabel.text = @"Copyright © 2012 Cloay. All rights reserved.";
     
     self.tableView.tableFooterView = copyLabel;
 }
@@ -85,6 +85,10 @@
     return number;
 }
 
+- (float)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 28;
+}
+/* not needed
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     NSString *title = @"";
     switch (section) {
@@ -101,7 +105,7 @@
             break;
     }
     return title;
-}
+}*/
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -214,10 +218,14 @@
         case 0:
             if (row == 0) { //分享
                 UMSocialService *service = [[UMSocialService alloc] initWithDescriptor:@"SettingsShare"];
-                [service presentSocialViewController:UMViewControllerShareList];
+                UIViewController *shareController = [service getSocialViewController:UMViewControllerShareList];
+                shareController.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:shareController animated:YES];
             }else{  //账号绑定
                 UMSocialService *service = [[UMSocialService alloc] initWithDescriptor:@"Account"];
-                [service presentSocialViewController:UMViewControllerAccount];
+                UIViewController *accountController = [service getSocialViewController:UMViewControllerAccount];
+                accountController.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:accountController animated:YES];
             }
             break;
         case 1:

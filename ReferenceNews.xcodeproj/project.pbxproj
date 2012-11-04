@@ -148,6 +148,13 @@
 		DA264D1D1639773700FAB77A /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA264D1C1639773700FAB77A /* MainWindow.xib */; };
 		DA264D2616397C7900FAB77A /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA264D2416397C7900FAB77A /* HomeViewController.m */; };
 		DA264D2716397C7900FAB77A /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA264D2516397C7900FAB77A /* HomeViewController.xib */; };
+		DA2B17D61644EBCA00A8DAB5 /* MatchUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2B17D51644EBCA00A8DAB5 /* MatchUtil.m */; };
+		DA2B17DF16452E8F00A8DAB5 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2B17DA16452E8F00A8DAB5 /* TFHpple.m */; };
+		DA2B17E016452E8F00A8DAB5 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2B17DC16452E8F00A8DAB5 /* TFHppleElement.m */; };
+		DA2B17E116452E8F00A8DAB5 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2B17DE16452E8F00A8DAB5 /* XPathQuery.m */; };
+		DA2B17E61645304A00A8DAB5 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2B17E41645304A00A8DAB5 /* ContentViewController.m */; };
+		DA2B17E71645304A00A8DAB5 /* ContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA2B17E51645304A00A8DAB5 /* ContentViewController.xib */; };
+		DA2B17E91645383800A8DAB5 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DA2B17E81645383800A8DAB5 /* libxml2.dylib */; };
 		DA55F4D7163D5CDF00CABAA5 /* china_btn_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = DA55F4CB163D5CDF00CABAA5 /* china_btn_bg.png */; };
 		DA55F4D8163D5CDF00CABAA5 /* china_btn_bg@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = DA55F4CC163D5CDF00CABAA5 /* china_btn_bg@2X.png */; };
 		DA55F4D9163D5CDF00CABAA5 /* fin_btn_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = DA55F4CD163D5CDF00CABAA5 /* fin_btn_bg.png */; };
@@ -369,6 +376,18 @@
 		DA264D2316397C7900FAB77A /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		DA264D2416397C7900FAB77A /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		DA264D2516397C7900FAB77A /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		DA2B17D41644EBCA00A8DAB5 /* MatchUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchUtil.h; sourceTree = "<group>"; };
+		DA2B17D51644EBCA00A8DAB5 /* MatchUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchUtil.m; sourceTree = "<group>"; };
+		DA2B17D916452E8F00A8DAB5 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
+		DA2B17DA16452E8F00A8DAB5 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
+		DA2B17DB16452E8F00A8DAB5 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
+		DA2B17DC16452E8F00A8DAB5 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
+		DA2B17DD16452E8F00A8DAB5 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		DA2B17DE16452E8F00A8DAB5 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		DA2B17E31645304A00A8DAB5 /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
+		DA2B17E41645304A00A8DAB5 /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
+		DA2B17E51645304A00A8DAB5 /* ContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentViewController.xib; sourceTree = "<group>"; };
+		DA2B17E81645383800A8DAB5 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		DA55F4CB163D5CDF00CABAA5 /* china_btn_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = china_btn_bg.png; sourceTree = "<group>"; };
 		DA55F4CC163D5CDF00CABAA5 /* china_btn_bg@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "china_btn_bg@2X.png"; sourceTree = "<group>"; };
 		DA55F4CD163D5CDF00CABAA5 /* fin_btn_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fin_btn_bg.png; sourceTree = "<group>"; };
@@ -469,6 +488,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA2B17E91645383800A8DAB5 /* libxml2.dylib in Frameworks */,
 				DAD4C4FB164005D8002DF588 /* Security.framework in Frameworks */,
 				DAD4C4F9164005C1002DF588 /* SystemConfiguration.framework in Frameworks */,
 				DAD4C4F7164005AA002DF588 /* CFNetwork.framework in Frameworks */,
@@ -666,6 +686,7 @@
 		DA264CFD163976CF00FAB77A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DA2B17E81645383800A8DAB5 /* libxml2.dylib */,
 				DAD4C4FA164005D8002DF588 /* Security.framework */,
 				DAD4C4F8164005C1002DF588 /* SystemConfiguration.framework */,
 				DAD4C4F6164005AA002DF588 /* CFNetwork.framework */,
@@ -719,6 +740,7 @@
 		DA264D1E16397C2200FAB77A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DA2B17E216452FF400A8DAB5 /* ContentViewController */,
 				DAF5093A163D224D005E27CE /* NewsListController */,
 				DAFFD069163B95C600AA9FE4 /* Settings */,
 				DAFFD068163B956100AA9FE4 /* ChinaView */,
@@ -745,6 +767,8 @@
 		DA264D2016397C3F00FAB77A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DA2B17D716452D8D00A8DAB5 /* ParseHtmlUtil */,
+				DA2B17D21644EB9700A8DAB5 /* MatchUtil */,
 				DAE3D857164174BC001ECEAD /* DateUtil */,
 				DAD4C4EA163FFEA8002DF588 /* XmlParseUtil */,
 				DAFFD052163B909200AA9FE4 /* CColor.h */,
@@ -773,6 +797,46 @@
 				DA264D2516397C7900FAB77A /* HomeViewController.xib */,
 			);
 			name = Home;
+			sourceTree = "<group>";
+		};
+		DA2B17D21644EB9700A8DAB5 /* MatchUtil */ = {
+			isa = PBXGroup;
+			children = (
+				DA2B17D41644EBCA00A8DAB5 /* MatchUtil.h */,
+				DA2B17D51644EBCA00A8DAB5 /* MatchUtil.m */,
+			);
+			name = MatchUtil;
+			sourceTree = "<group>";
+		};
+		DA2B17D716452D8D00A8DAB5 /* ParseHtmlUtil */ = {
+			isa = PBXGroup;
+			children = (
+				DA2B17D816452E6300A8DAB5 /* Hpple */,
+			);
+			name = ParseHtmlUtil;
+			sourceTree = "<group>";
+		};
+		DA2B17D816452E6300A8DAB5 /* Hpple */ = {
+			isa = PBXGroup;
+			children = (
+				DA2B17D916452E8F00A8DAB5 /* TFHpple.h */,
+				DA2B17DA16452E8F00A8DAB5 /* TFHpple.m */,
+				DA2B17DB16452E8F00A8DAB5 /* TFHppleElement.h */,
+				DA2B17DC16452E8F00A8DAB5 /* TFHppleElement.m */,
+				DA2B17DD16452E8F00A8DAB5 /* XPathQuery.h */,
+				DA2B17DE16452E8F00A8DAB5 /* XPathQuery.m */,
+			);
+			name = Hpple;
+			sourceTree = "<group>";
+		};
+		DA2B17E216452FF400A8DAB5 /* ContentViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DA2B17E31645304A00A8DAB5 /* ContentViewController.h */,
+				DA2B17E41645304A00A8DAB5 /* ContentViewController.m */,
+				DA2B17E51645304A00A8DAB5 /* ContentViewController.xib */,
+			);
+			name = ContentViewController;
 			sourceTree = "<group>";
 		};
 		DA55F4C9163D5CC300CABAA5 /* home */ = {
@@ -1242,6 +1306,7 @@
 				DA106BDD163EAF2200370C39 /* btn_bar_settings.png in Resources */,
 				DA106BDE163EAF2200370C39 /* btn_bar_settings@2x.png in Resources */,
 				DA106BDF163EAF2200370C39 /* btn_tab_view.png in Resources */,
+				DA2B17E71645304A00A8DAB5 /* ContentViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1275,6 +1340,11 @@
 				DAD4C4E9163FFE47002DF588 /* Reachability.m in Sources */,
 				DAD4C4ED163FFEE4002DF588 /* XmlParseUtil.m in Sources */,
 				DAE3D85A164174DE001ECEAD /* DateUtil.m in Sources */,
+				DA2B17D61644EBCA00A8DAB5 /* MatchUtil.m in Sources */,
+				DA2B17DF16452E8F00A8DAB5 /* TFHpple.m in Sources */,
+				DA2B17E016452E8F00A8DAB5 /* TFHppleElement.m in Sources */,
+				DA2B17E116452E8F00A8DAB5 /* XPathQuery.m in Sources */,
+				DA2B17E61645304A00A8DAB5 /* ContentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1314,7 +1384,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = "-lxml2";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1334,8 +1406,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-lxml2";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

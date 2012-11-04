@@ -9,6 +9,8 @@
 #import "NewsViewController.h"
 #import "News.h"
 #import "DateUtil.h"
+#import "MatchUtil.h"
+#import "ContentViewController.h"
 
 @interface NewsViewController ()
 
@@ -75,7 +77,7 @@
 }
 
 - (float)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 20;
+    return 25;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -103,7 +105,9 @@
     // Configure the cell...
     News *news = [self.newsArray objectAtIndex:[indexPath section]];
     cell.textLabel.text = news.title;
-    cell.detailTextLabel.text = news.summary;
+    
+    NSString *result = [MatchUtil stringWithoutHtmltag:news.summary];
+    cell.detailTextLabel.text = result;
     return cell;
 }
 
@@ -151,12 +155,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
+     ContentViewController *detailViewController = [[ContentViewController alloc] initWithNibName:@"ContentViewController" bundle:nil];
+    detailViewController.news = [newsArray objectAtIndex:[indexPath section]];
      [self.navigationController pushViewController:detailViewController animated:YES];
-     */
 }
 
 #pragma mark - ASIHTTPRequest delegate methods
@@ -169,7 +170,7 @@
 
 - (void)requestFailed:(ASIHTTPRequest *)request{
     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-    [MKInfoPanel showPanelInView:self.view type:MKInfoPanelTypeInfo title:@"提示" subtitle:@"加载数据失败，请稍后重试！" hideAfter:3];
+    [MKInfoPanel showPanelInView:self.view type:MKInfoPanelTypeError title:@"提示" subtitle:@"加载数据失败，请稍后重试！" hideAfter:3];
 }
 
 #pragma mark - XmlParserUtil delegate

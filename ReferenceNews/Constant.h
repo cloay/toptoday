@@ -16,6 +16,7 @@
 #define TANWANTAG 5
 #define SEECHINATAG 6
 #define HOTNEWSTAG 7
+#define KNOTIFICATION @"SwitchStatus"
 #define SERVER @"http://app.cankaoxiaoxi.com"
 #define UMKEY @"508d2a0d527015234e000010"
 @interface Constant : NSObject

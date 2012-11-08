@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA04AE0A164BDEA100F09A4D /* DAReloadActivityButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DA04AE07164BDEA100F09A4D /* DAReloadActivityButton.m */; };
+		DA04AE0B164BDEA100F09A4D /* reload.png in Resources */ = {isa = PBXBuildFile; fileRef = DA04AE08164BDEA100F09A4D /* reload.png */; };
+		DA04AE0C164BDEA100F09A4D /* reload@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA04AE09164BDEA100F09A4D /* reload@2x.png */; };
 		DA106B50163EAC6400370C39 /* libSocialLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA106AC6163EAC6300370C39 /* libSocialLibrary.a */; };
 		DA106B5B163EAC6400370C39 /* UMS_account_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA106AD4163EAC6300370C39 /* UMS_account_normal@2x.png */; };
 		DA106B5C163EAC6400370C39 /* UMS_account_tap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA106AD5163EAC6300370C39 /* UMS_account_tap@2x.png */; };
@@ -224,6 +227,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA04AE06164BDEA100F09A4D /* DAReloadActivityButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAReloadActivityButton.h; sourceTree = "<group>"; };
+		DA04AE07164BDEA100F09A4D /* DAReloadActivityButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAReloadActivityButton.m; sourceTree = "<group>"; };
+		DA04AE08164BDEA100F09A4D /* reload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reload.png; sourceTree = "<group>"; };
+		DA04AE09164BDEA100F09A4D /* reload@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reload@2x.png"; sourceTree = "<group>"; };
 		DA106AC6163EAC6300370C39 /* libSocialLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialLibrary.a; sourceTree = "<group>"; };
 		DA106AD4163EAC6300370C39 /* UMS_account_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UMS_account_normal@2x.png"; sourceTree = "<group>"; };
 		DA106AD5163EAC6300370C39 /* UMS_account_tap@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UMS_account_tap@2x.png"; sourceTree = "<group>"; };
@@ -510,6 +517,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA04AE04164BDE7500F09A4D /* DAReloadActivity */ = {
+			isa = PBXGroup;
+			children = (
+				DA04AE06164BDEA100F09A4D /* DAReloadActivityButton.h */,
+				DA04AE07164BDEA100F09A4D /* DAReloadActivityButton.m */,
+				DA04AE08164BDEA100F09A4D /* reload.png */,
+				DA04AE09164BDEA100F09A4D /* reload@2x.png */,
+			);
+			name = DAReloadActivity;
+			sourceTree = "<group>";
+		};
 		DA106AC7163EAC6300370C39 /* SocialSDKBarThemes */ = {
 			isa = PBXGroup;
 			children = (
@@ -753,6 +771,7 @@
 		DA264D1F16397C3000FAB77A /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				DA04AE04164BDE7500F09A4D /* DAReloadActivity */,
 				DA106BEA163EB63D00370C39 /* Entiy */,
 				DAF50941163D2FF8005E27CE /* ASIHttpRequest */,
 				DAFFD05D163B943A00AA9FE4 /* MBProgress */,
@@ -1307,6 +1326,8 @@
 				DA106BDE163EAF2200370C39 /* btn_bar_settings@2x.png in Resources */,
 				DA106BDF163EAF2200370C39 /* btn_tab_view.png in Resources */,
 				DA2B17E71645304A00A8DAB5 /* ContentViewController.xib in Resources */,
+				DA04AE0B164BDEA100F09A4D /* reload.png in Resources */,
+				DA04AE0C164BDEA100F09A4D /* reload@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1345,6 +1366,7 @@
 				DA2B17E016452E8F00A8DAB5 /* TFHppleElement.m in Sources */,
 				DA2B17E116452E8F00A8DAB5 /* XPathQuery.m in Sources */,
 				DA2B17E61645304A00A8DAB5 /* ContentViewController.m in Sources */,
+				DA04AE0A164BDEA100F09A4D /* DAReloadActivityButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

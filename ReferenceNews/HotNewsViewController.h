@@ -13,6 +13,7 @@
 @interface HotNewsViewController : UITableViewController<ASIHTTPRequestDelegate, XmlParseUtilDelegate>{
     NSMutableArray *newsArray;
     ASIHTTPRequest *httpRequest;
+    DAReloadActivityButton *refreshBtn;
 }
 
 @property (nonatomic, retain) NSMutableArray *newsArray;

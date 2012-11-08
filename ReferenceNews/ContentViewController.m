@@ -33,6 +33,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.title = news.title;
+    
+    refreshBtn = [[DAReloadActivityButton alloc] init];
+    [refreshBtn addTarget:self action:@selector(refreshBtnDidTaped) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:refreshBtn];
+    
     isCanClick = YES;
     CLog(@"contentUrl------>%@", news.urlStr);
     [_webView.scrollView setShowsHorizontalScrollIndicator:NO];
@@ -46,6 +51,11 @@
     httpRequest = [ASIHTTPRequest requestWithURL:url];
     [httpRequest setDelegate:self];
     [httpRequest startAsynchronous];
+}
+
+- (void)refreshBtnDidTaped{
+    [refreshBtn startAnimating];
+    [self getNewsContent];
 }
 
 - (IBAction)toolBarItemTaped:(id)sender{
@@ -113,11 +123,13 @@
     }else{
         [MKInfoPanel showPanelInView:self.view type:MKInfoPanelTypeError title:@"提示" subtitle:@"加载数据失败，请稍后重试！" hideAfter:3];
     }
+    [refreshBtn stopAnimating];
     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request{
     self.title = @"加载失败！";
+    [refreshBtn stopAnimating];
     [MKInfoPanel showPanelInView:self.view type:MKInfoPanelTypeError title:@"提示" subtitle:@"加载数据失败，请稍后重试！" hideAfter:3];
     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
 }

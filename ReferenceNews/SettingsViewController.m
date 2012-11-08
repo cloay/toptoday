@@ -9,8 +9,7 @@
 #import "SettingsViewController.h"
 #import "UMFeedback.h"
 #import "UMSocialService.h"
-
-#define KNOTIFICATION @"SwitchStatus"
+#import "NotificationUtil.h"
 
 @interface SettingsViewController ()
 
@@ -156,9 +155,9 @@
     UISwitch *switchBtn = (UISwitch *)sender;
     [settings setBool:switchBtn.isOn forKey:KNOTIFICATION];
     if (switchBtn.isOn) {//生成通知
-        
+        [NotificationUtil makeLocalNotification];
     }else{//关闭通知
-        
+        [NotificationUtil cancelLocalNotification];
     }
 }
 

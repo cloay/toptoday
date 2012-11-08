@@ -13,6 +13,7 @@
 @interface ContentViewController : UIViewController<ASIHTTPRequestDelegate, UIWebViewDelegate>{
     ASIHTTPRequest *httpRequest;
     BOOL isCanClick;
+    DAReloadActivityButton *refreshBtn;
 }
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (nonatomic, strong) News *news;

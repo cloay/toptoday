@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "MobClick.h"
 #import "UMSocialService.h"
+#import "NotificationUtil.h"
 
 @implementation AppDelegate
 @synthesize window;
@@ -20,6 +21,15 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = tabBarController;
+    
+    
+    UILocalNotification *notifi = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
+    if (notifi) {
+        [application cancelAllLocalNotifications];
+        application.applicationIconBadgeNumber = 0;
+        [self.tabBarController setSelectedIndex:1];
+    }
+    
     [self.window makeKeyAndVisible];
     
     [UMSocialService setAppKey:UMKEY];
@@ -37,6 +47,11 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+    if ([settings objectForKey:KNOTIFICATION] == nil || [settings boolForKey:KNOTIFICATION]) {
+        [NotificationUtil cancelLocalNotification]; //先清空旧的通知
+        [NotificationUtil makeLocalNotification];
+    }
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -54,4 +69,10 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
+    [application cancelAllLocalNotifications];
+    application.applicationIconBadgeNumber = 0;
+
+    [self.tabBarController setSelectedIndex:1];
+}
 @end

@@ -38,10 +38,20 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.title = [Constant getTitleWithTag:self.tag];
+    
+    refreshBtn = [[DAReloadActivityButton alloc] init];
+    [refreshBtn addTarget:self action:@selector(refreshBtnDidTaped) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:refreshBtn];
+    
     CLog(@"Url------>%@", [Constant getUrlWithTag:self.tag]);
     self.newsArray = [[NSMutableArray alloc] init];
     
     //获取新闻
+    [self getNews];
+}
+
+- (void)refreshBtnDidTaped{
+    [refreshBtn startAnimating];
     [self getNews];
 }
 
@@ -169,15 +179,20 @@
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request{
+    [refreshBtn stopAnimating];
     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     [MKInfoPanel showPanelInView:self.view type:MKInfoPanelTypeError title:@"提示" subtitle:@"加载数据失败，请稍后重试！" hideAfter:3];
 }
 
 #pragma mark - XmlParserUtil delegate
 - (void)xmlParseFinishedWithData:(NSArray *)data{
+    if (refreshBtn.isAnimating) {
+        [self.newsArray removeAllObjects];
+    }
     [self.newsArray addObjectsFromArray:data];
     [self.tableView reloadData];
     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    [refreshBtn stopAnimating];
     [MKInfoPanel showPanelInView:self.view type:MKInfoPanelTypeInfo title:@"提示" subtitle:[NSString stringWithFormat:@"共有%i条新闻更新！", [data count]] hideAfter:3];
 }
 @end

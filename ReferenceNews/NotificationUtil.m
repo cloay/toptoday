@@ -17,7 +17,7 @@
     UILocalNotification *notifi = [[UILocalNotification alloc] init];
     if (notifi) {
         //提醒时间
-        notifi.fireDate = [date dateByAddingTimeInterval:10];
+        notifi.fireDate = [date dateByAddingTimeInterval:10];  //3*24*60*60  三天后提醒
         notifi.timeZone = [NSTimeZone defaultTimeZone];
         //设置重复间隔，0表示不重复
         notifi.repeatInterval = NSQuarterCalendarUnit; //如果用户没有查看，每15分钟推送一次

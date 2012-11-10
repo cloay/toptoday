@@ -10,7 +10,6 @@
 #import "News.h"
 #import "DateUtil.h"
 #import "MatchUtil.h"
-#import "ContentViewController.h"
 
 @interface ChinaViewController ()
 
@@ -42,6 +41,15 @@
     refreshBtn = [[DAReloadActivityButton alloc] init];
     [refreshBtn addTarget:self action:@selector(refreshBtnDidTaped) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:refreshBtn];
+    
+    if (_refreshHeaderView == nil) {
+		
+		EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, self.view.frame.size.width, self.tableView.bounds.size.height)];
+		view.delegate = self;
+		[self.tableView addSubview:view];
+		_refreshHeaderView = view;
+		
+	}
     
     CLog(@"see_china_url------->%@", [Constant getTitleWithTag:SEECHINATAG]);
     self.newsArray = [[NSMutableArray alloc] init];
@@ -162,12 +170,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     ContentViewController *detailViewController = [[ContentViewController alloc] initWithNibName:@"ContentViewController" bundle:nil];
     detailViewController.news = [newsArray objectAtIndex:[indexPath section]];
     detailViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
-
 
 #pragma mark - ASIHTTPRequest delegate methods
 - (void)requestFinished:(ASIHTTPRequest *)request{
@@ -179,6 +188,7 @@
 
 - (void)requestFailed:(ASIHTTPRequest *)request{
     [refreshBtn stopAnimating];
+    [self doneLoadingTableViewData];
     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     [MKInfoPanel showPanelInView:self.view type:MKInfoPanelTypeError title:@"提示" subtitle:@"加载数据失败，请稍后重试！" hideAfter:3];
 }
@@ -192,6 +202,61 @@
     [self.tableView reloadData];
     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     [refreshBtn stopAnimating];
+    [self doneLoadingTableViewData];
     [MKInfoPanel showPanelInView:self.view type:MKInfoPanelTypeInfo title:@"提示" subtitle:[NSString stringWithFormat:@"共有%i条新闻更新！", [data count]] hideAfter:3];
+}
+
+#pragma mark -
+#pragma mark Data Source Loading / Reloading Methods
+
+- (void)reloadTableViewDataSource{
+	//  should be calling your tableviews data source model to reload
+    [self refreshBtnDidTaped];
+}
+
+- (void)doneLoadingTableViewData{
+	
+	//  model should call this when its done loading
+    [self.tableView reloadData];
+	[_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
+	
+}
+
+
+#pragma mark -
+#pragma mark UIScrollViewDelegate Methods
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+	
+	[_refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
+    
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+	
+	[_refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
+	
+}
+
+
+#pragma mark -
+#pragma mark EGORefreshTableHeaderDelegate Methods
+
+- (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view{
+	
+	[self reloadTableViewDataSource];
+	
+}
+
+- (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view{
+	
+	return refreshBtn.isAnimating; // should return if data source model is reloading
+	
+}
+
+- (NSDate*)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView*)view{
+	
+	return [NSDate date]; // should return date data source was last changed
+	
 }
 @end

@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "ASIHTTPRequest.h"
 #import "XmlParseUtil.h"
+#import "EGORefreshTableHeaderView.h"
+#import "ContentViewController.h"
 
-@interface HotNewsViewController : UITableViewController<ASIHTTPRequestDelegate, XmlParseUtilDelegate>{
+@interface HotNewsViewController : UITableViewController<ASIHTTPRequestDelegate, XmlParseUtilDelegate, EGORefreshTableHeaderDelegate>{
     NSMutableArray *newsArray;
     ASIHTTPRequest *httpRequest;
     DAReloadActivityButton *refreshBtn;
+    EGORefreshTableHeaderView *_refreshHeaderView;
 }
 
 @property (nonatomic, retain) NSMutableArray *newsArray;

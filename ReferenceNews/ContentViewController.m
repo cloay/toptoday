@@ -9,7 +9,7 @@
 #import "ContentViewController.h"
 #import "MatchUtil.h"
 #import "TFHpple.h"
-#import "UMSocialService.h"
+#import "UMSNSService.h"
 
 @interface ContentViewController ()
 
@@ -17,6 +17,7 @@
 
 @implementation ContentViewController
 @synthesize news, forwardUrl, toolBar;
+@synthesize delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,11 +29,24 @@
     return self;
 }
 
+- (void)backBtn{
+    [self.navigationController popViewControllerAnimated:NO];
+    if ([delegate respondsToSelector:@selector(backButtonDidTaped)]) {
+        [delegate backButtonDidTaped];
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.title = news.title;
+    
+    if (delegate) {
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonSystemItemUndo target:self action:@selector(backBtn)];
+        self.navigationItem.leftBarButtonItem.tintColor = NAV_BAR_COLOR;
+
+    }
     
     refreshBtn = [[DAReloadActivityButton alloc] init];
     [refreshBtn addTarget:self action:@selector(refreshBtnDidTaped) forControlEvents:UIControlEventTouchUpInside];
@@ -63,14 +77,17 @@
     if (barBtnItem.tag == 0) {
         [self.navigationController popToRootViewControllerAnimated:YES];
     }else{//分享
-        UMSocialService *service = [[UMSocialService alloc] initWithDescriptor:@"ContentShare"];
-        UIViewController *shareController = [service getSocialViewController:UMViewControllerShareList];
-        [self.navigationController pushViewController:shareController animated:YES];
+        [self showShareList];
     }
 }
 
+- (void)showShareList{
+    NSString *shareText = [self.title stringByAppendingString:self.news.urlStr];
+    [UMSNSService showSNSActionSheetInController:self appkey:UMKEY status:shareText image:nil];
+}
+
 - (void)showToolBar{
-    [UIView animateWithDuration:0.6 animations:^{
+    [UIView animateWithDuration:0.8 animations:^{
         [self.toolBar setAlpha:1.0];
     }];
 }

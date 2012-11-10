@@ -8,8 +8,9 @@
 
 #import "SettingsViewController.h"
 #import "UMFeedback.h"
-#import "UMSocialService.h"
 #import "NotificationUtil.h"
+#import "UMSNSService.h"
+#import "AboutViewController.h"
 
 @interface SettingsViewController ()
 
@@ -70,7 +71,7 @@
     int number = 0;
     switch (section) {
         case 0:
-            number = 2;
+            number = 1;
             break;
         case 1:
             number = 1;
@@ -128,12 +129,7 @@
 
     switch (section) {
         case 0:
-            if (row == 0) {
-                cell.textLabel.text = @"分享";
-            }else{
-                cell.textLabel.text = @"账号绑定";
-                cell.detailTextLabel.text = @"设置";
-            }
+            cell.textLabel.text = @"分享";
             break;
         case 1:
             cell.textLabel.text = @"打开或关闭通知";
@@ -204,28 +200,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSInteger section = [indexPath section];
     NSInteger row = [indexPath row];
     switch (section) {
-        case 0:
-            if (row == 0) { //分享
-                UMSocialService *service = [[UMSocialService alloc] initWithDescriptor:@"SettingsShare"];
-                UIViewController *shareController = [service getSocialViewController:UMViewControllerShareList];
-                shareController.hidesBottomBarWhenPushed = YES;
-                [self.navigationController pushViewController:shareController animated:YES];
-            }else{  //账号绑定
-                UMSocialService *service = [[UMSocialService alloc] initWithDescriptor:@"Account"];
-                UIViewController *accountController = [service getSocialViewController:UMViewControllerAccount];
-                accountController.hidesBottomBarWhenPushed = YES;
-                [self.navigationController pushViewController:accountController animated:YES];
-            }
+        case 0: //分享
+            [self showShareList];
             break;
         case 1:
             break;
@@ -233,11 +213,19 @@
             if (row == 0) {
                 [UMFeedback showFeedback:self withAppkey:UMKEY];
             }else{//关于
-                
+                AboutViewController *aboutView = [[AboutViewController alloc] initWithNibName:@"AboutViewController" bundle:nil];
+                aboutView.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:aboutView animated:YES];
             }
         default:
             break;
     }
+}
+
+- (void)showShareList{
+    NSString *shareText = @"我正在使用参考消息iphone版看新闻，很方便，你也试一下吧！";
+    UIImage *shareImage = [UIImage imageNamed:@"share_image"];
+    [UMSNSService showSNSActionSheetInController:self appkey:UMKEY status:shareText image:shareImage];
 }
 
 @end

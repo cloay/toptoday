@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "MobClick.h"
-#import "UMSocialService.h"
 #import "NotificationUtil.h"
 
 @implementation AppDelegate
@@ -19,9 +18,8 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    [tabBarController setSelectedIndex:0];
     self.window.rootViewController = tabBarController;
-    
     
     UILocalNotification *notifi = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
     if (notifi) {
@@ -32,7 +30,6 @@
     
     [self.window makeKeyAndVisible];
     
-    [UMSocialService setAppKey:UMKEY];
     [MobClick startWithAppkey:UMKEY reportPolicy:REALTIME channelId:nil];
     return YES;
 }

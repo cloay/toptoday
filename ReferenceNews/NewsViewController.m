@@ -58,14 +58,23 @@
     [self getNews];
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    self.back = NO;
+    [self.tableView beginUpdates];
+    [self.tableView endUpdates];
+}
+
 - (void)refreshBtnDidTaped{
     [refreshBtn startAnimating];
     [self getNews];
 }
 
 - (void)getNews{
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.labelText = @"正在加载...";
+    if (!isPulldown) {
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.labelText = @"正在加载...";
+    }
+    
     NSURL *url = [NSURL URLWithString:[Constant getUrlWithTag:self.tag]];
     httpRequest = [ASIHTTPRequest requestWithURL:url];
     [httpRequest setDelegate:self];
@@ -198,7 +207,6 @@
 
 - (void)showContentView:(News *)news{
     ContentViewController *detailViewController = [[ContentViewController alloc] initWithNibName:@"ContentViewController" bundle:nil];
-    detailViewController.delegate = self;
     detailViewController.news = news;
     [self.navigationController pushViewController:detailViewController animated:NO];
 }
@@ -213,6 +221,7 @@
 - (void)requestFailed:(ASIHTTPRequest *)request{
     [refreshBtn stopAnimating];
     [self doneLoadingTableViewData];
+    isPulldown = NO;
     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     [MKInfoPanel showPanelInView:self.view type:MKInfoPanelTypeError title:@"提示" subtitle:@"加载数据失败，请稍后重试！" hideAfter:3];
 }
@@ -226,6 +235,7 @@
     [self.tableView reloadData];
     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     [refreshBtn stopAnimating];
+    isPulldown = NO;
     [self doneLoadingTableViewData];
     [MKInfoPanel showPanelInView:self.view type:MKInfoPanelTypeInfo title:@"提示" subtitle:[NSString stringWithFormat:@"共有%i条新闻更新！", [data count]] hideAfter:3];
 }
@@ -235,6 +245,7 @@
 
 - (void)reloadTableViewDataSource{
 	//  should be calling your tableviews data source model to reload
+    isPulldown = YES;
     [self refreshBtnDidTaped];
 }
 
@@ -284,11 +295,4 @@
 	
 }
 
-#pragma mark-
-#pragma contentview controller delegate
-- (void)backButtonDidTaped{
-    self.back = NO;
-    [self.tableView beginUpdates];
-    [self.tableView endUpdates];
-}
 @end

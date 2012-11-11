@@ -29,24 +29,11 @@
     return self;
 }
 
-- (void)backBtn{
-    [self.navigationController popViewControllerAnimated:NO];
-    if ([delegate respondsToSelector:@selector(backButtonDidTaped)]) {
-        [delegate backButtonDidTaped];
-    }
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.title = news.title;
-    
-    if (delegate) {
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonSystemItemUndo target:self action:@selector(backBtn)];
-        self.navigationItem.leftBarButtonItem.tintColor = NAV_BAR_COLOR;
-
-    }
     
     refreshBtn = [[DAReloadActivityButton alloc] init];
     [refreshBtn addTarget:self action:@selector(refreshBtnDidTaped) forControlEvents:UIControlEventTouchUpInside];

@@ -12,11 +12,12 @@
 #import "EGORefreshTableHeaderView.h"
 #import "ContentViewController.h"
 
-@interface NewsViewController : UITableViewController<ASIHTTPRequestDelegate, XmlParseUtilDelegate, EGORefreshTableHeaderDelegate, ContentViewControllerDelegate>{
+@interface NewsViewController : UITableViewController<ASIHTTPRequestDelegate, XmlParseUtilDelegate, EGORefreshTableHeaderDelegate>{
     NSMutableArray *newsArray;
     ASIHTTPRequest *httpRequest;
     DAReloadActivityButton *refreshBtn;
     EGORefreshTableHeaderView *_refreshHeaderView;
+    BOOL isPulldown;
     NSInteger selectedRow;
 }
 //新闻类别，根据类别获取相应的新闻列表

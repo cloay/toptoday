@@ -16,6 +16,7 @@
     ASIHTTPRequest *httpRequest;
     DAReloadActivityButton *refreshBtn;
     EGORefreshTableHeaderView *_refreshHeaderView;
+    BOOL isPullDown;
 }
 @property (nonatomic, retain) NSMutableArray *newsArray;
 @end

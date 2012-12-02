@@ -10,6 +10,8 @@
 
 @interface SettingsViewController : UITableViewController{
     NSUserDefaults *settings;
+    BOOL isNeedUpdate;
+    NSString *itunesUrlStr;
 }
 
 @end

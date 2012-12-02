@@ -49,6 +49,7 @@
 				<object class="NSPSMatrix" key="NSFrameMatrix"/>
 				<string key="NSFrameSize">{320, 480}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSNextKeyView"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
 					<bytes key="NSRGB">MSAxIDEAA</bytes>
@@ -115,7 +116,7 @@
 					<array class="NSMutableArray" key="IBUIViewControllers">
 						<object class="IBUIViewController" id="320370677">
 							<object class="IBUINavigationItem" key="IBUINavigationItem" id="337138104">
-								<string key="IBUITitle">首页</string>
+								<string key="IBUITitle">参考消息</string>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
 							<reference key="IBUIParentViewController" ref="67582824"/>
@@ -246,7 +247,6 @@
 									<nil key="NSNextResponder"/>
 									<int key="NSvFlags">274</int>
 									<string key="NSFrame">{{0, 20}, {320, 411}}</string>
-									<reference key="NSNextKeyView" ref="865414246"/>
 									<string key="NSReuseIdentifierKey">_NS:10</string>
 									<object class="NSColor" key="IBUIBackgroundColor">
 										<int key="NSColorSpace">3</int>
@@ -288,6 +288,7 @@
 					<int key="NSvFlags">266</int>
 					<string key="NSFrame">{{0, 431}, {320, 49}}</string>
 					<reference key="NSSuperview"/>
+					<reference key="NSNextKeyView"/>
 					<string key="NSReuseIdentifierKey">_NS:29</string>
 					<object class="NSColor" key="IBUIBackgroundColor" id="735902104">
 						<int key="NSColorSpace">3</int>

@@ -11,6 +11,7 @@
 #import "NotificationUtil.h"
 #import "UMSNSService.h"
 #import "AboutViewController.h"
+#import "MobClick.h"
 
 @interface SettingsViewController ()
 
@@ -48,6 +49,7 @@
     copyLabel.text = @"Copyright © 2012 Cloay. All rights reserved.";
     
     self.tableView.tableFooterView = copyLabel;
+    isNeedUpdate = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -77,7 +79,7 @@
             number = 1;
             break;
         case 2:
-            number = 2;
+            number = 3;
             break;
         default:
             break;
@@ -113,6 +115,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+        [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     }
     
     // Configure the cell...
@@ -132,14 +135,20 @@
             cell.textLabel.text = @"分享";
             break;
         case 1:
+            [cell setAccessoryType:UITableViewCellAccessoryNone];
             cell.textLabel.text = @"打开或关闭通知";
             [cell.contentView addSubview:switchBtn];
             break;
         case 2:
             if (row == 0) {
                 cell.textLabel.text = @"用户反馈";
-            }else{
+            }else if (row == 1){
                 cell.textLabel.text = @"关于";
+            }else{
+                cell.textLabel.text = @"检查更新";
+                if (!isNeedUpdate) {
+                    cell.textLabel.text = @"当前版本已是最新版本！";
+                }
             }
         default:
             break;
@@ -212,16 +221,38 @@
         case 2:
             if (row == 0) {
                 [UMFeedback showFeedback:self withAppkey:UMKEY];
-            }else{//关于
+            }else if(row == 1){//关于
                 AboutViewController *aboutView = [[AboutViewController alloc] initWithNibName:@"AboutViewController" bundle:nil];
                 aboutView.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:aboutView animated:YES];
+            }else{
+                if (isNeedUpdate) {
+                    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                    hud.labelText = @"正在检查更新...";
+                    [MobClick checkUpdateWithDelegate:self selector:@selector(appUpdate:)];
+                }
             }
         default:
             break;
     }
 }
+#pragma mark -
+#pragma MobClickDelegate method
+- (void)appUpdate:(NSDictionary *)appInfo{
+    CLog(@"appinfo ---->%@", appInfo);
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    isNeedUpdate = [[appInfo objectForKey:@"update"] boolValue];
+    if (isNeedUpdate) { //If has a new version
+        NSString *update_log = [appInfo objectForKey:@"update_log"];
+        itunesUrlStr = [appInfo objectForKey:@"path"];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Update" message:update_log delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Goto store", nil];
+        [alert show];
+    }else{
+        [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:2 inSection:2]] withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
 
+#pragma mark
 - (void)showShareList{
     NSString *shareText = @"我正在使用参考消息iphone版看新闻，很方便，你也试一下吧！";
     UIImage *shareImage = [UIImage imageNamed:@"share_image"];

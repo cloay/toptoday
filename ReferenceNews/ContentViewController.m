@@ -16,7 +16,7 @@
 @end
 
 @implementation ContentViewController
-@synthesize news, forwardUrl, toolBar;
+@synthesize news, forwardUrl, toolBar, errorLabel;
 @synthesize delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -46,6 +46,7 @@
 }
 
 - (void)getNewsContent{
+    errorLabel.hidden = YES;
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.labelText = @"正在加载...";
     NSURL *url = [NSURL URLWithString:news.urlStr];
@@ -125,6 +126,7 @@
         [self showToolBar];
         [_webView loadHTMLString:content baseURL:nil];
     }else{
+        errorLabel.hidden = NO;
         [MKInfoPanel showPanelInView:self.view type:MKInfoPanelTypeError title:@"提示" subtitle:@"加载数据失败，请稍后重试！" hideAfter:3];
     }
     [refreshBtn stopAnimating];
@@ -135,6 +137,7 @@
     self.title = @"加载失败！";
     [refreshBtn stopAnimating];
     [MKInfoPanel showPanelInView:self.view type:MKInfoPanelTypeError title:@"提示" subtitle:@"加载数据失败，请稍后重试！" hideAfter:3];
+    self.errorLabel.hidden = NO;
     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
 }
 
@@ -148,5 +151,9 @@
         [self goForward];
         return NO;
     }
+}
+- (void)viewDidUnload {
+    [self setErrorLabel:nil];
+    [super viewDidUnload];
 }
 @end

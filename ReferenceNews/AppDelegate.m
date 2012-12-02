@@ -30,6 +30,7 @@
     [self.window makeKeyAndVisible];
     
     [MobClick startWithAppkey:UMKEY reportPolicy:REALTIME channelId:nil];
+    [MobClick checkUpdate];
     return YES;
 }
 

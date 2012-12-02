@@ -16,6 +16,7 @@
     BOOL isCanClick;
     DAReloadActivityButton *refreshBtn;
 }
+@property (weak, nonatomic) IBOutlet UILabel *errorLabel;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (nonatomic, strong) News *news;
 @property (nonatomic, strong) NSURL *forwardUrl;

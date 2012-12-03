@@ -9,12 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "News.h"
 #import "ASIHTTPRequest.h"
+#import "AutoScrollLabel.h"
 
 @protocol ContentViewControllerDelegate;
 @interface ContentViewController : UIViewController<ASIHTTPRequestDelegate, UIWebViewDelegate>{
     ASIHTTPRequest *httpRequest;
     BOOL isCanClick;
     DAReloadActivityButton *refreshBtn;
+    AutoScrollLabel *titleLabel;
 }
 @property (weak, nonatomic) IBOutlet UILabel *errorLabel;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;

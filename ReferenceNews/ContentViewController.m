@@ -33,7 +33,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.title = news.title;
+    titleLabel = [[AutoScrollLabel alloc] initWithFrame:CGRectMake(0, 0, 230, 25)];
+    [titleLabel setTextColor:[UIColor whiteColor]];
+    [titleLabel setFont:[UIFont boldSystemFontOfSize:20]];
+    titleLabel.text = self.news.title;
+    self.navigationItem.titleView = titleLabel;
     
     refreshBtn = [[DAReloadActivityButton alloc] init];
     [refreshBtn addTarget:self action:@selector(refreshBtnDidTaped) forControlEvents:UIControlEventTouchUpInside];
@@ -41,10 +45,15 @@
     
     isCanClick = YES;
     CLog(@"contentUrl------>%@", news.urlStr);
+    _webView.scrollView.bounces = NO;
     [_webView.scrollView setShowsHorizontalScrollIndicator:NO];
     [self getNewsContent];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [titleLabel scroll];    
+}
 - (void)getNewsContent{
     errorLabel.hidden = YES;
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -70,7 +79,7 @@
 }
 
 - (void)showShareList{
-    NSString *shareText = [self.title stringByAppendingString:self.news.urlStr];
+    NSString *shareText = [titleLabel.text stringByAppendingString:self.news.urlStr];
     [UMSNSService showSNSActionSheetInController:self appkey:UMKEY status:shareText image:nil];
 }
 
@@ -116,7 +125,7 @@
         NSArray *children = element.children;
         if ([children count] > 0) {
             TFHppleElement *child = [children objectAtIndex:0];
-            self.title = child.content;
+            titleLabel.text = child.content;
         }
     }
     
@@ -134,7 +143,6 @@
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request{
-    self.title = @"加载失败！";
     [refreshBtn stopAnimating];
     [MKInfoPanel showPanelInView:self.view type:MKInfoPanelTypeError title:@"提示" subtitle:@"加载数据失败，请稍后重试！" hideAfter:3];
     self.errorLabel.hidden = NO;

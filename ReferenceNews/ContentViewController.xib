@@ -105,7 +105,7 @@
 									<string key="NSResourceName">btn_bar_home.png</string>
 								</object>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<int key="IBUIStyle">1</int>
+								<int key="IBUIStyle">2</int>
 								<reference key="IBUIToolbar" ref="298163724"/>
 								<object class="NSColor" key="IBUITintColor">
 									<int key="NSColorSpace">1</int>
@@ -114,18 +114,14 @@
 							</object>
 							<object class="IBUIBarButtonItem" id="340630099">
 								<int key="IBUITag">1</int>
-								<object class="NSCustomResource" key="IBUIImage">
-									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">ic_details_forward.png</string>
-								</object>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<float key="IBUIWidth">51</float>
-								<int key="IBUIStyle">1</int>
+								<int key="IBUIStyle">2</int>
 								<reference key="IBUIToolbar" ref="298163724"/>
 								<object class="NSColor" key="IBUITintColor">
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MC41MjU4MzY0NDcgMC4wODkzMTc4Mzg4MSAwLjAwMTkxNTM1MTQzOQA</bytes>
 								</object>
+								<int key="IBUISystemItemIdentifier">9</int>
 							</object>
 						</array>
 						<object class="NSColor" key="IBUITintColor">
@@ -358,10 +354,10 @@
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
-		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="btn_bar_home.png">{30, 30}</string>
-			<string key="ic_details_forward.png">{40, 32}</string>
-		</dictionary>
+		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<string key="NS.key.0">btn_bar_home.png</string>
+			<string key="NS.object.0">{30, 30}</string>
+		</object>
 		<string key="IBCocoaTouchPluginVersion">1926</string>
 	</data>
 </archive>

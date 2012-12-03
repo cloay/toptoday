@@ -105,7 +105,7 @@
 									<string key="NSResourceName">btn_bar_home.png</string>
 								</object>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<int key="IBUIStyle">2</int>
+								<int key="IBUIStyle">1</int>
 								<reference key="IBUIToolbar" ref="298163724"/>
 								<object class="NSColor" key="IBUITintColor">
 									<int key="NSColorSpace">1</int>
@@ -115,7 +115,7 @@
 							<object class="IBUIBarButtonItem" id="340630099">
 								<int key="IBUITag">1</int>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<int key="IBUIStyle">2</int>
+								<int key="IBUIStyle">1</int>
 								<reference key="IBUIToolbar" ref="298163724"/>
 								<object class="NSColor" key="IBUITintColor">
 									<int key="NSColorSpace">1</int>

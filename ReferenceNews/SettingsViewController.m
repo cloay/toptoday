@@ -10,7 +10,7 @@
 #import "UMFeedback.h"
 #import "NotificationUtil.h"
 #import "UMSNSService.h"
-#import "AboutViewController.h"
+#import "AboutUsViewController.h"
 #import "MobClick.h"
 
 @interface SettingsViewController ()
@@ -49,7 +49,6 @@
     copyLabel.text = @"Copyright © 2012 Cloay. All rights reserved.";
     
     self.tableView.tableFooterView = copyLabel;
-    isNeedUpdate = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -79,7 +78,7 @@
             number = 1;
             break;
         case 2:
-            number = 3;
+            number = 2;
             break;
         default:
             break;
@@ -144,11 +143,6 @@
                 cell.textLabel.text = @"用户反馈";
             }else if (row == 1){
                 cell.textLabel.text = @"关于";
-            }else{
-                cell.textLabel.text = @"检查更新";
-                if (!isNeedUpdate) {
-                    cell.textLabel.text = @"当前版本已是最新版本！";
-                }
             }
         default:
             break;
@@ -222,35 +216,15 @@
             if (row == 0) {
                 [UMFeedback showFeedback:self withAppkey:UMKEY];
             }else if(row == 1){//关于
-                AboutViewController *aboutView = [[AboutViewController alloc] initWithNibName:@"AboutViewController" bundle:nil];
+                AboutUsViewController *aboutView = [[AboutUsViewController alloc] initWithNibName:@"AboutUsViewController" bundle:nil];
                 aboutView.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:aboutView animated:YES];
-            }else{
-                if (isNeedUpdate) {
-                    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-                    hud.labelText = @"正在检查更新...";
-                    [MobClick checkUpdateWithDelegate:self selector:@selector(appUpdate:)];
-                }
             }
         default:
             break;
     }
 }
-#pragma mark -
-#pragma MobClickDelegate method
-- (void)appUpdate:(NSDictionary *)appInfo{
-    CLog(@"appinfo ---->%@", appInfo);
-    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-    isNeedUpdate = [[appInfo objectForKey:@"update"] boolValue];
-    if (isNeedUpdate) { //If has a new version
-        NSString *update_log = [appInfo objectForKey:@"update_log"];
-        itunesUrlStr = [appInfo objectForKey:@"path"];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Update" message:update_log delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Goto store", nil];
-        [alert show];
-    }else{
-        [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:2 inSection:2]] withRowAnimation:UITableViewRowAnimationFade];
-    }
-}
+
 
 #pragma mark
 - (void)showShareList{

@@ -29,6 +29,8 @@
     
     [self.window makeKeyAndVisible];
     
+    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    [MobClick setAppVersion:version];
     [MobClick startWithAppkey:UMKEY reportPolicy:REALTIME channelId:nil];
     [MobClick checkUpdate];
     return YES;

@@ -138,6 +138,8 @@
 		DA55F4E7163D631600CABAA5 /* umFeedback.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DA55F4E4163D631600CABAA5 /* umFeedback.bundle */; };
 		DA55F4EA163D64E600CABAA5 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA55F4E8163D64E600CABAA5 /* libMobClickLibrary.a */; };
 		DA55F4EC163D650600CABAA5 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DA55F4EB163D650600CABAA5 /* libz.dylib */; };
+		DA6B01D8166E446000F87809 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DA6B01D7166E446000F87809 /* Default.png */; };
+		DA6B01DA166E446800F87809 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA6B01D9166E446800F87809 /* Default@2x.png */; };
 		DAD4C4DD163FFE20002DF588 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD4C4CA163FFE20002DF588 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DAD4C4DE163FFE20002DF588 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD4C4CD163FFE20002DF588 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DAD4C4DF163FFE20002DF588 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD4C4CF163FFE20002DF588 /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -155,8 +157,6 @@
 		DAE3D85A164174DE001ECEAD /* DateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE3D859164174DE001ECEAD /* DateUtil.m */; };
 		DAF5093F163D227E005E27CE /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF5093D163D227E005E27CE /* NewsViewController.m */; };
 		DAF50940163D227E005E27CE /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAF5093E163D227E005E27CE /* NewsViewController.xib */; };
-		DAF50950163D4C8A005E27CE /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DAF5094F163D4C8A005E27CE /* Default.png */; };
-		DAF50952163D4C92005E27CE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAF50951163D4C92005E27CE /* Default@2x.png */; };
 		DAFFD057163B916500AA9FE4 /* Constant.m in Sources */ = {isa = PBXBuildFile; fileRef = DAFFD056163B916500AA9FE4 /* Constant.m */; };
 		DAFFD066163B94F600AA9FE4 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DAFFD065163B94F600AA9FE4 /* MBProgressHUD.m */; };
 		DAFFD06D163B95E800AA9FE4 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAFFD06B163B95E800AA9FE4 /* SettingsViewController.m */; };
@@ -330,6 +330,8 @@
 		DA55F4E8163D64E600CABAA5 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
 		DA55F4E9163D64E600CABAA5 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		DA55F4EB163D650600CABAA5 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		DA6B01D7166E446000F87809 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
+		DA6B01D9166E446800F87809 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		DAD4C4C9163FFE20002DF588 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		DAD4C4CA163FFE20002DF588 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		DAD4C4CB163FFE20002DF588 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -363,8 +365,6 @@
 		DAF5093C163D227E005E27CE /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		DAF5093D163D227E005E27CE /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		DAF5093E163D227E005E27CE /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
-		DAF5094F163D4C8A005E27CE /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
-		DAF50951163D4C92005E27CE /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		DAFFD052163B909200AA9FE4 /* CColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CColor.h; sourceTree = "<group>"; };
 		DAFFD053163B910C00AA9FE4 /* CLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLog.h; sourceTree = "<group>"; };
 		DAFFD054163B913C00AA9FE4 /* SystemVersionUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemVersionUtil.h; sourceTree = "<group>"; };
@@ -858,10 +858,10 @@
 		DAF5094E163D39D4005E27CE /* icon */ = {
 			isa = PBXGroup;
 			children = (
+				DA6B01D9166E446800F87809 /* Default@2x.png */,
+				DA6B01D7166E446000F87809 /* Default.png */,
 				DA2E4D98166CF28C00E69A32 /* icon@2x.png */,
 				DA2E4D96166CF28300E69A32 /* icon.png */,
-				DAF50951163D4C92005E27CE /* Default@2x.png */,
-				DAF5094F163D4C8A005E27CE /* Default.png */,
 			);
 			name = icon;
 			sourceTree = "<group>";
@@ -1054,8 +1054,6 @@
 				DAFFD08C163B9B0800AA9FE4 /* Warning.png in Resources */,
 				DAFFD08D163B9B0800AA9FE4 /* Warning@2x.png in Resources */,
 				DAF50940163D227E005E27CE /* NewsViewController.xib in Resources */,
-				DAF50950163D4C8A005E27CE /* Default.png in Resources */,
-				DAF50952163D4C92005E27CE /* Default@2x.png in Resources */,
 				DA55F4D7163D5CDF00CABAA5 /* china_btn_bg.png in Resources */,
 				DA55F4D8163D5CDF00CABAA5 /* china_btn_bg@2X.png in Resources */,
 				DA55F4D9163D5CDF00CABAA5 /* fin_btn_bg.png in Resources */,
@@ -1157,6 +1155,8 @@
 				DA2E4D97166CF28300E69A32 /* icon.png in Resources */,
 				DA2E4D99166CF28C00E69A32 /* icon@2x.png in Resources */,
 				DA2E4D9B166CF2C300E69A32 /* share_home_image.png in Resources */,
+				DA6B01D8166E446000F87809 /* Default.png in Resources */,
+				DA6B01DA166E446800F87809 /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

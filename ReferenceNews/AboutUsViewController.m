@@ -35,7 +35,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.title = @"关于";
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(110, 20, 114, 114)];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(103, 20, 114, 114)];
     [imageView setImage:[UIImage imageNamed:@"icon@2x.png"]];
     
     UIView *tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 150)];
@@ -133,7 +133,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
     if (indexPath.row == 1) {  //声明
         NSString *title = @"声明：";
         NSString *message = @"本应用中的内容均来自参考消息官网，不代表本人支持或赞成其观点。如有疑问请发送Email到:\n\n shangrody@gmail.com \n\n谢谢您的支持！";

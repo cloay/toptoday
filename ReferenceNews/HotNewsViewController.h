@@ -18,6 +18,7 @@
     DAReloadActivityButton *refreshBtn;
     EGORefreshTableHeaderView *_refreshHeaderView;
     BOOL isPullDown;
+    UILabel *errorLabel;
 }
 
 @property (nonatomic, retain) NSMutableArray *newsArray;

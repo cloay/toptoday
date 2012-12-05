@@ -17,14 +17,14 @@
     UILocalNotification *notifi = [[UILocalNotification alloc] init];
     if (notifi) {
         //提醒时间
-        notifi.fireDate = [date dateByAddingTimeInterval:10];  //3*24*60*60  三天后提醒
+        notifi.fireDate = [date dateByAddingTimeInterval:3*24*60*60];  //3*24*60*60  三天后提醒
         notifi.timeZone = [NSTimeZone defaultTimeZone];
         //设置重复间隔，0表示不重复
         notifi.repeatInterval = NSQuarterCalendarUnit; //如果用户没有查看，每15分钟推送一次
         //推送声音
         notifi.soundName = UILocalNotificationDefaultSoundName;
         //推送信息
-        notifi.alertBody = @"有新的新闻，点击确定查看详情！";
+        notifi.alertBody = @"有新的新闻，点击查看详情！";
         notifi.alertAction = @"确定";
         //添加推送
         UIApplication *application = [UIApplication sharedApplication];

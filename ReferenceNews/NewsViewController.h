@@ -19,6 +19,7 @@
     EGORefreshTableHeaderView *_refreshHeaderView;
     BOOL isPulldown;
     NSInteger selectedRow;
+    UILabel *errorLabel;
 }
 //新闻类别，根据类别获取相应的新闻列表
 @property (nonatomic, assign) NSInteger tag;

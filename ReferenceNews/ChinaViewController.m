@@ -203,6 +203,7 @@
         [errorLabel setTextColor:[UIColor grayColor]];
         errorLabel.text = @"加载数据失败，请重试！";
     }
+    self.tableView.tableHeaderView = errorLabel;
     [MKInfoPanel showPanelInView:self.view type:MKInfoPanelTypeError title:@"提示" subtitle:@"加载数据失败，请稍后重试！" hideAfter:3];
 }
 

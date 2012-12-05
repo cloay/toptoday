@@ -75,6 +75,8 @@
         hud.labelText = @"正在加载...";
     }
     
+    self.tableView.tableHeaderView = nil;
+    
     NSURL *url = [NSURL URLWithString:[Constant getUrlWithTag:self.tag]];
     httpRequest = [ASIHTTPRequest requestWithURL:url];
     [httpRequest setDelegate:self];
@@ -223,6 +225,14 @@
     [self doneLoadingTableViewData];
     isPulldown = NO;
     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    if (errorLabel == nil) {
+        errorLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 150)];
+        errorLabel.textAlignment = NSTextAlignmentCenter;
+        [errorLabel setFont:[UIFont systemFontOfSize:18]];
+        [errorLabel setTextColor:[UIColor grayColor]];
+        errorLabel.text = @"加载数据失败，请重试！";
+    }
+    self.tableView.tableHeaderView = errorLabel;
     [MKInfoPanel showPanelInView:self.view type:MKInfoPanelTypeError title:@"提示" subtitle:@"加载数据失败，请稍后重试！" hideAfter:3];
 }
 

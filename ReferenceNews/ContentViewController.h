@@ -10,13 +10,16 @@
 #import "News.h"
 #import "ASIHTTPRequest.h"
 #import "AutoScrollLabel.h"
+#import "GADBannerView.h"
 
 @protocol ContentViewControllerDelegate;
-@interface ContentViewController : UIViewController<ASIHTTPRequestDelegate, UIWebViewDelegate>{
+@interface ContentViewController : UIViewController<ASIHTTPRequestDelegate, UIWebViewDelegate, GADBannerViewDelegate>{
     ASIHTTPRequest *httpRequest;
     BOOL isCanClick;
     DAReloadActivityButton *refreshBtn;
     AutoScrollLabel *titleLabel;
+    
+    GADBannerView *bannerView_;
 }
 @property (weak, nonatomic) IBOutlet UILabel *errorLabel;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;

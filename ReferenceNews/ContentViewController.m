@@ -29,10 +29,31 @@
     return self;
 }
 
+
+- (void)initAdmob{
+    // 在屏幕底部创建标准尺寸的视图。
+    bannerView_ = [[GADBannerView alloc]
+                   initWithFrame:CGRectMake(0.0,
+                                            - 60,
+                                            GAD_SIZE_320x50.width,
+                                            GAD_SIZE_320x50.height)];
+    
+    // 指定广告的“单元标识符”，也就是您的 AdMob 发布商 ID。
+    bannerView_.adUnitID = ADUINTID;
+    bannerView_.delegate = self;
+    // 告知运行时文件，在将用户转至广告的展示位置之后恢复哪个 UIViewController
+    // 并将其添加至视图层级结构。
+    bannerView_.rootViewController = self;
+    [self.view addSubview:bannerView_];
+    
+    // 启动一般性请求并在其中加载广告。
+    [bannerView_ loadRequest:[GADRequest request]];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
     titleLabel = [[AutoScrollLabel alloc] initWithFrame:CGRectMake(0, 0, 230, 25)];
     [titleLabel setTextColor:[UIColor whiteColor]];
     [titleLabel setFont:[UIFont boldSystemFontOfSize:20]];
@@ -45,7 +66,7 @@
     
     isCanClick = YES;
     CLog(@"contentUrl------>%@", news.urlStr);
-    _webView.scrollView.bounces = NO;
+//    _webView.scrollView.bounces = NO;
     [_webView.scrollView setShowsHorizontalScrollIndicator:NO];
     [self getNewsContent];
 }
@@ -86,6 +107,8 @@
 - (void)showToolBar{
     [UIView animateWithDuration:0.8 animations:^{
         [self.toolBar setAlpha:1.0];
+        // show google ad.
+        [self initAdmob];
     }];
 }
 
@@ -136,7 +159,7 @@
         [_webView loadHTMLString:content baseURL:nil];
     }else{
         errorLabel.hidden = NO;
-        [MKInfoPanel showPanelInView:self.view type:MKInfoPanelTypeError title:@"提示" subtitle:@"加载数据失败，请稍后重试！" hideAfter:3];
+        [MKInfoPanel showPanelInView:self.view type:MKInfoPanelTypeError title:@"提示" subtitle:@"加载数据失败，请稍后重试！" hideAfter:2];
     }
     [refreshBtn stopAnimating];
     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
@@ -144,7 +167,7 @@
 
 - (void)requestFailed:(ASIHTTPRequest *)request{
     [refreshBtn stopAnimating];
-    [MKInfoPanel showPanelInView:self.view type:MKInfoPanelTypeError title:@"提示" subtitle:@"加载数据失败，请稍后重试！" hideAfter:3];
+    [MKInfoPanel showPanelInView:self.view type:MKInfoPanelTypeError title:@"提示" subtitle:@"加载数据失败，请稍后重试！" hideAfter:2];
     self.errorLabel.hidden = NO;
     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
 }
@@ -160,6 +183,19 @@
         return NO;
     }
 }
+
+#pragma mark - GADBannerView delegate method
+- (void)adViewDidReceiveAd:(GADBannerView *)bannerView {
+    [UIView beginAnimations:@"BannerSlide" context:nil];
+//    bannerView.frame = CGRectMake(0.0,
+//                                  self.view.frame.size.height -
+//                                  bannerView.frame.size.height,
+//                                  bannerView.frame.size.width,
+//                                  bannerView.frame.size.height);
+    [bannerView_ setCenter:CGPointMake(bannerView_.center.x, bannerView_.center.y + 60)];    
+    [UIView commitAnimations];
+}
+
 - (void)viewDidUnload {
     [self setErrorLabel:nil];
     [super viewDidUnload];

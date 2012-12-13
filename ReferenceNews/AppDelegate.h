@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GADInterstitial.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, GADInterstitialDelegate>
 
 @property (strong, nonatomic)IBOutlet UIWindow *window;
 @property (strong, nonatomic)IBOutlet UITabBarController *tabBarController;

@@ -204,7 +204,7 @@
         errorLabel.text = @"加载数据失败，请重试！";
     }
     self.tableView.tableHeaderView = errorLabel;
-    [MKInfoPanel showPanelInView:self.view type:MKInfoPanelTypeError title:@"提示" subtitle:@"加载数据失败，请稍后重试！" hideAfter:3];
+    [MKInfoPanel showPanelInView:self.view type:MKInfoPanelTypeError title:@"提示" subtitle:@"加载数据失败，请稍后重试！" hideAfter:2];
 }
 
 #pragma mark - XmlParserUtil delegate
@@ -218,7 +218,7 @@
     [refreshBtn stopAnimating];
     isPullDown = NO;
     [self doneLoadingTableViewData];
-    [MKInfoPanel showPanelInView:self.view type:MKInfoPanelTypeInfo title:@"提示" subtitle:[NSString stringWithFormat:@"共有%i条新闻更新！", [data count]] hideAfter:3];
+    [MKInfoPanel showPanelInView:self.view type:MKInfoPanelTypeInfo title:@"提示" subtitle:[NSString stringWithFormat:@"共有%i条新闻更新！", [data count]] hideAfter:2];
 }
 
 #pragma mark -

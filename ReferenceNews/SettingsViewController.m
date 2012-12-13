@@ -12,6 +12,7 @@
 #import "UMSNSService.h"
 #import "AboutUsViewController.h"
 #import "MobClick.h"
+#import "UMTableViewController.h"
 
 @interface SettingsViewController ()
 
@@ -75,7 +76,7 @@
             number = 1;
             break;
         case 1:
-            number = 1;
+            number = 2;
             break;
         case 2:
             number = 2;
@@ -134,9 +135,14 @@
             cell.textLabel.text = @"分享";
             break;
         case 1:
-            [cell setAccessoryType:UITableViewCellAccessoryNone];
-            cell.textLabel.text = @"打开或关闭通知";
-            [cell.contentView addSubview:switchBtn];
+            if (row == 0) {
+                [cell setAccessoryType:UITableViewCellAccessoryNone];
+                cell.textLabel.text = @"打开或关闭通知";
+                [cell.contentView addSubview:switchBtn];
+            }else{
+                cell.textLabel.text = @"精彩推荐";
+            }
+            
             break;
         case 2:
             if (row == 0) {
@@ -211,6 +217,11 @@
             [self showShareList];
             break;
         case 1:
+            if (row == 1) {
+                UMTableViewController *umViewController = [[UMTableViewController alloc] initWithNibName:nil bundle:nil];
+                umViewController.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:umViewController animated:YES];
+            }
             break;
         case 2:
             if (row == 0) {

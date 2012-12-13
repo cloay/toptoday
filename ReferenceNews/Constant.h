@@ -19,6 +19,7 @@
 #define KNOTIFICATION @"SwitchStatus"
 #define SERVER @"http://app.cankaoxiaoxi.com"
 #define UMKEY @"508d2a0d527015234e000010"
+#define ADUINTID @"a150c9897f6c955"
 @interface Constant : NSObject
 
 //获取标题

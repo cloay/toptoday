@@ -17,6 +17,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
     [tabBarController setSelectedIndex:0];
     self.window.rootViewController = tabBarController;
     
@@ -28,6 +29,13 @@
     }
     
     [self.window makeKeyAndVisible];
+    
+    GADInterstitial *splashInterstitial_ = [[GADInterstitial alloc] init];
+    splashInterstitial_.adUnitID = ADUINTID;
+    splashInterstitial_.delegate = self;
+    [splashInterstitial_ loadAndDisplayRequest:[GADRequest request]
+                                   usingWindow:self.window
+                                  initialImage:[UIImage imageNamed:@"Default"]];
     
     NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     [MobClick setAppVersion:version];
@@ -73,5 +81,12 @@
     application.applicationIconBadgeNumber = 0;
 
     [self.tabBarController setSelectedIndex:1];
+}
+
+#pragma mark - GADInterstitial delegate method
+- (void)interstitialDidReceiveAd:(GADInterstitial *)interstitial{
+    if (interstitial.isReady) {
+        [interstitial presentFromRootViewController:self.window.rootViewController];        
+    }
 }
 @end

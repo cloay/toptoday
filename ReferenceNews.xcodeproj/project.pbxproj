@@ -607,7 +607,7 @@
 		DA264D1F16397C3000FAB77A /* Public */ = {
 			isa = PBXGroup;
 			children = (
-				DA4BBDBE167A08A100D1ABF1 /* admob */,
+				DADB4EC6167B4D4C00D37216 /* AD */,
 				DA2E4D86166CE56200E69A32 /* AHAlertView */,
 				DA2E4D73166CD1D900E69A32 /* AutoScrollView */,
 				DA2C57BC164E2A7D004B201A /* EGOTableViewPullRefresh */,
@@ -992,6 +992,14 @@
 				DAD4C4EC163FFEE4002DF588 /* XmlParseUtil.m */,
 			);
 			name = XmlParseUtil;
+			sourceTree = "<group>";
+		};
+		DADB4EC6167B4D4C00D37216 /* AD */ = {
+			isa = PBXGroup;
+			children = (
+				DA4BBDBE167A08A100D1ABF1 /* admob */,
+			);
+			name = AD;
 			sourceTree = "<group>";
 		};
 		DAE3D857164174BC001ECEAD /* DateUtil */ = {
@@ -1475,6 +1483,10 @@
 		DA264D19163976CF00FAB77A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/ReferenceNews\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ReferenceNews/ReferenceNews-Prefix.pch";
 				INFOPLIST_FILE = "ReferenceNews/ReferenceNews-Info.plist";
@@ -1498,6 +1510,10 @@
 		DA264D1A163976CF00FAB77A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/ReferenceNews\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ReferenceNews/ReferenceNews-Prefix.pch";
 				INFOPLIST_FILE = "ReferenceNews/ReferenceNews-Info.plist";

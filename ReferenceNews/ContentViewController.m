@@ -34,7 +34,7 @@
     // 在屏幕底部创建标准尺寸的视图。
     bannerView_ = [[GADBannerView alloc]
                    initWithFrame:CGRectMake(0.0,
-                                            - 60,
+                                            - 100,
                                             GAD_SIZE_320x50.width,
                                             GAD_SIZE_320x50.height)];
     
@@ -46,8 +46,21 @@
     bannerView_.rootViewController = self;
     [self.view addSubview:bannerView_];
     
+    close_ad_btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    close_ad_btn.hidden = YES;
+    [close_ad_btn setFrame:CGRectMake(290, - 50, 30, 30)];
+    [close_ad_btn setImage:[UIImage imageNamed:@"close_btn"] forState:UIControlStateNormal];
+    [close_ad_btn addTarget:self action:@selector(closeAdBtnDidTaped:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:close_ad_btn];
     // 启动一般性请求并在其中加载广告。
     [bannerView_ loadRequest:[GADRequest request]];
+}
+
+- (IBAction)closeAdBtnDidTaped:(id)sender{
+    [UIView beginAnimations:@"BannerSlide" context:nil];
+    [bannerView_ setCenter:CGPointMake(bannerView_.center.x, bannerView_.center.y - 100)];
+    [close_ad_btn setCenter:CGPointMake(close_ad_btn.center.x, close_ad_btn.center.y - 95)];
+    [UIView commitAnimations];
 }
 
 - (void)viewDidLoad
@@ -101,14 +114,14 @@
 
 - (void)showShareList{
     NSString *shareText = [titleLabel.text stringByAppendingString:self.news.urlStr];
-    [UMSNSService showSNSActionSheetInController:self appkey:UMKEY status:shareText image:nil];
+    [UMSNSService showSNSActionSheetInController:self appkey:UMKEY status:[@"#今日头条#" stringByAppendingString:shareText] image:nil];
 }
 
 - (void)showToolBar{
     [UIView animateWithDuration:0.8 animations:^{
         [self.toolBar setAlpha:1.0];
-        // show google ad.
-        [self initAdmob];
+        // show google ad. Version 1.0 don't show ads.
+//        [self initAdmob];
     }];
 }
 
@@ -186,13 +199,10 @@
 
 #pragma mark - GADBannerView delegate method
 - (void)adViewDidReceiveAd:(GADBannerView *)bannerView {
+    close_ad_btn.hidden = NO;
     [UIView beginAnimations:@"BannerSlide" context:nil];
-//    bannerView.frame = CGRectMake(0.0,
-//                                  self.view.frame.size.height -
-//                                  bannerView.frame.size.height,
-//                                  bannerView.frame.size.width,
-//                                  bannerView.frame.size.height);
-    [bannerView_ setCenter:CGPointMake(bannerView_.center.x, bannerView_.center.y + 60)];    
+    [bannerView_ setCenter:CGPointMake(bannerView_.center.x, bannerView_.center.y + 100)];
+    [close_ad_btn setCenter:CGPointMake(close_ad_btn.center.x, close_ad_btn.center.y + 98)];
     [UIView commitAnimations];
 }
 

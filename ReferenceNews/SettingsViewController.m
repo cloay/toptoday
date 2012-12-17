@@ -239,7 +239,7 @@
 
 #pragma mark
 - (void)showShareList{
-    NSString *shareText = @"我正在使用参考消息iphone版看新闻，很方便，你也试一下吧！";
+    NSString *shareText = @"#今日头条#我正在使用今日头条参考消息专版看新闻，很方便，你也试一下吧！";
     UIImage *shareImage = [UIImage imageNamed:@"share_image"];
     [UMSNSService showSNSActionSheetInController:self appkey:UMKEY status:shareText image:shareImage];
 }

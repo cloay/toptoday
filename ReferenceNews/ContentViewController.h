@@ -18,7 +18,7 @@
     BOOL isCanClick;
     DAReloadActivityButton *refreshBtn;
     AutoScrollLabel *titleLabel;
-    
+    UIButton *close_ad_btn;
     GADBannerView *bannerView_;
 }
 @property (weak, nonatomic) IBOutlet UILabel *errorLabel;

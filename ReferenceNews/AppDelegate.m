@@ -30,13 +30,16 @@
     
     [self.window makeKeyAndVisible];
     
+    /*
+     * version 1.0 Don't show ads.
+     *
     GADInterstitial *splashInterstitial_ = [[GADInterstitial alloc] init];
     splashInterstitial_.adUnitID = ADUINTID;
     splashInterstitial_.delegate = self;
     [splashInterstitial_ loadAndDisplayRequest:[GADRequest request]
                                    usingWindow:self.window
                                   initialImage:[UIImage imageNamed:@"Default"]];
-    
+    */
     NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     [MobClick setAppVersion:version];
     [MobClick startWithAppkey:UMKEY reportPolicy:REALTIME channelId:nil];

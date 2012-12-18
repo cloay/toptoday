@@ -12,7 +12,8 @@
 #import "UMSNSService.h"
 #import "AboutUsViewController.h"
 #import "MobClick.h"
-#import "UMTableViewController.h"
+#import "AppListViewController.h"
+
 
 @interface SettingsViewController ()
 
@@ -30,6 +31,10 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -218,9 +223,9 @@
             break;
         case 1:
             if (row == 1) {
-                UMTableViewController *umViewController = [[UMTableViewController alloc] initWithNibName:nil bundle:nil];
-                umViewController.hidesBottomBarWhenPushed = YES;
-                [self.navigationController pushViewController:umViewController animated:YES];
+                AppListViewController *appListViewController = [[AppListViewController alloc] initWithNibName:@"AppListViewController" bundle:nil];
+                appListViewController.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:appListViewController animated:YES];
             }
             break;
         case 2:

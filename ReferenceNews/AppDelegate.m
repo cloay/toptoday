@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "MobClick.h"
 #import "NotificationUtil.h"
+#import "WapsOffer/AppConnect.h"
 
 @implementation AppDelegate
 @synthesize window;
@@ -44,6 +45,8 @@
     [MobClick setAppVersion:version];
     [MobClick startWithAppkey:UMKEY reportPolicy:REALTIME channelId:nil];
     [MobClick checkUpdate];
+    
+    [AppConnect getConnect:WAPS_ID pid:@"appstore"];
     return YES;
 }
 

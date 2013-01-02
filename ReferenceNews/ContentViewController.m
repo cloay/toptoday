@@ -153,8 +153,8 @@
 }
 #pragma mark - ASIHTTPRequest delegate methods
 - (void)requestFinished:(ASIHTTPRequest *)request{
-    //更新标题
-    TFHpple *hpple = [[TFHpple alloc] initWithData:[request responseData] isXML:NO];
+    //更新标题 apple can't support this way.
+    /*TFHpple *hpple = [[TFHpple alloc] initWithData:[request responseData] isXML:NO];
     NSArray *elements = [hpple searchWithXPathQuery:@"//title"];
     if ([elements count] > 0) {
         TFHppleElement *element = [elements objectAtIndex:0];
@@ -163,7 +163,7 @@
             TFHppleElement *child = [children objectAtIndex:0];
             titleLabel.text = child.content;
         }
-    }
+    }*/
     
     //更新新闻内容
     NSString *content = [MatchUtil stringNewsContent:[request responseString]];

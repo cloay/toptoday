@@ -141,6 +141,7 @@
             break;
         case 1:
             if (row == 0) {
+                [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
                 [cell setAccessoryType:UITableViewCellAccessoryNone];
                 cell.textLabel.text = @"打开或关闭通知";
                 [cell.contentView addSubview:switchBtn];

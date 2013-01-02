@@ -136,7 +136,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     if (indexPath.row == 1) {  //声明
         NSString *title = @"声明：";
-        NSString *message = @"本应用中的内容均来自参考消息官网，不代表本人支持或赞成其观点。如有疑问请发送Email到:\n\n shangrody@gmail.com \n\n谢谢您的支持！";
+        NSString *message = @"本应用中的内容均来自参考消息官网\n(Copyright©www.cankaoxiaoxi.com)\n不代表本人支持或赞成其观点。如有疑问请发送Email到:\n\n shangrody@gmail.com \n\n谢谢您的支持！";
         
         AHAlertView *alert = [[AHAlertView alloc] initWithTitle:title message:message];
 //        [alert setCancelButtonTitle:@"确定" block:^{

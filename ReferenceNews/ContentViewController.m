@@ -16,15 +16,14 @@
 @end
 
 @implementation ContentViewController
-@synthesize news, forwardUrl, toolBar, errorLabel;
-@synthesize delegate;
+@synthesize news, forwardUrl, errorLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-//        [self.toolBar setCenter:CGPointMake(160, self.toolBar.center.y + 44)];
+
     }
     return self;
 }
@@ -77,6 +76,24 @@
     [refreshBtn addTarget:self action:@selector(refreshBtnDidTaped) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:refreshBtn];
     
+    [self.navigationController.toolbar setTintColor:NAV_BAR_COLOR];
+    
+    UIBarButtonItem *homeItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_bar_home"] style:UIBarButtonItemStylePlain target:self action:@selector(toolBarItemTaped:)];
+    [homeItem setWidth:70];
+    homeItem.tag = 0;
+    
+    UIBarButtonItem *spaceItem = [[UIBarButtonItem alloc] initWithCustomView:[[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200, 44)]];
+    [spaceItem setWidth:180];
+    spaceItem.tag = 1;
+    
+    UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(toolBarItemTaped:)];
+    [shareItem setWidth:70];
+    shareItem.tag = 2;
+    
+    [self setToolbarItems:[NSArray arrayWithObjects:homeItem, spaceItem, shareItem, nil]];
+    
+    CLog(@"toolbarItems--->%@", self.toolbarItems);
+    
     isCanClick = YES;
     CLog(@"contentUrl------>%@", news.urlStr);
 //    _webView.scrollView.bounces = NO;
@@ -107,22 +124,19 @@
     UIBarButtonItem *barBtnItem = (UIBarButtonItem *)sender;
     if (barBtnItem.tag == 0) {
         [self.navigationController popToRootViewControllerAnimated:YES];
-    }else{//分享
+    }else if(barBtnItem.tag == 2){//分享
         [self showShareList];
     }
 }
 
 - (void)showShareList{
     NSString *shareText = [titleLabel.text stringByAppendingString:self.news.urlStr];
-    [UMSNSService showSNSActionSheetInController:self appkey:UMKEY status:[@"#今日头条#" stringByAppendingString:shareText] image:nil];
+    [UMSNSService showSNSActionSheetInController:self.navigationController appkey:UMKEY status:[@"#今日头条#" stringByAppendingString:shareText] image:nil];
 }
 
 - (void)showToolBar{
-    [UIView animateWithDuration:0.8 animations:^{
-        [self.toolBar setAlpha:1.0];
-        // show google ad. Version 1.0 don't show ads.
-//        [self initAdmob];
-    }];
+    [self.navigationController setToolbarHidden:NO animated:YES];
+    [self initAdmob];
 }
 
 /* not needed
@@ -145,7 +159,7 @@
 - (void)goForward{
     ContentViewController *forwardController = [[ContentViewController alloc] initWithNibName:@"ContentViewController" bundle:nil];
     NSMutableDictionary *newsDic = [[NSMutableDictionary alloc] init];
-    [newsDic setObject:@"正在加载..." forKey:@"title"];
+    [newsDic setObject:titleLabel.text forKey:@"title"];
     [newsDic setObject:[forwardUrl absoluteString] forKey:@"link"];
     News *forwardNews = [[News alloc] initWithDictionary:newsDic];
     forwardController.news = forwardNews;
@@ -153,7 +167,7 @@
 }
 #pragma mark - ASIHTTPRequest delegate methods
 - (void)requestFinished:(ASIHTTPRequest *)request{
-    //更新标题 apple can't support this way.
+    //更新标题 apple not support this way.
     /*TFHpple *hpple = [[TFHpple alloc] initWithData:[request responseData] isXML:NO];
     NSArray *elements = [hpple searchWithXPathQuery:@"//title"];
     if ([elements count] > 0) {

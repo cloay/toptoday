@@ -10,6 +10,8 @@
 		DA04AE0A164BDEA100F09A4D /* DAReloadActivityButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DA04AE07164BDEA100F09A4D /* DAReloadActivityButton.m */; };
 		DA04AE0B164BDEA100F09A4D /* reload.png in Resources */ = {isa = PBXBuildFile; fileRef = DA04AE08164BDEA100F09A4D /* reload.png */; };
 		DA04AE0C164BDEA100F09A4D /* reload@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA04AE09164BDEA100F09A4D /* reload@2x.png */; };
+		DA0FB29216AAAC43006E7DE3 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0FB29016AAAC43006E7DE3 /* MoreViewController.m */; };
+		DA0FB29316AAAC43006E7DE3 /* MoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA0FB29116AAAC43006E7DE3 /* MoreViewController.xib */; };
 		DA106BDB163EAF2200370C39 /* btn_bar_home.png in Resources */ = {isa = PBXBuildFile; fileRef = DA106BD6163EAF2200370C39 /* btn_bar_home.png */; };
 		DA106BDC163EAF2200370C39 /* btn_bar_home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA106BD7163EAF2200370C39 /* btn_bar_home@2x.png */; };
 		DA106BDD163EAF2200370C39 /* btn_bar_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = DA106BD8163EAF2200370C39 /* btn_bar_settings.png */; };
@@ -171,10 +173,6 @@
 		DAFFD066163B94F600AA9FE4 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DAFFD065163B94F600AA9FE4 /* MBProgressHUD.m */; };
 		DAFFD06D163B95E800AA9FE4 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAFFD06B163B95E800AA9FE4 /* SettingsViewController.m */; };
 		DAFFD06E163B95E800AA9FE4 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAFFD06C163B95E800AA9FE4 /* SettingsViewController.xib */; };
-		DAFFD072163B98E200AA9FE4 /* ChinaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAFFD070163B98E200AA9FE4 /* ChinaViewController.m */; };
-		DAFFD073163B98E200AA9FE4 /* ChinaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAFFD071163B98E200AA9FE4 /* ChinaViewController.xib */; };
-		DAFFD077163B993700AA9FE4 /* HotNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAFFD075163B993700AA9FE4 /* HotNewsViewController.m */; };
-		DAFFD078163B993700AA9FE4 /* HotNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAFFD076163B993700AA9FE4 /* HotNewsViewController.xib */; };
 		DAFFD084163B9B0800AA9FE4 /* Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = DAFFD079163B9B0800AA9FE4 /* Blue.png */; };
 		DAFFD085163B9B0800AA9FE4 /* Blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAFFD07A163B9B0800AA9FE4 /* Blue@2x.png */; };
 		DAFFD086163B9B0800AA9FE4 /* MKInfoPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = DAFFD07C163B9B0800AA9FE4 /* MKInfoPanel.m */; };
@@ -193,6 +191,9 @@
 		DA04AE07164BDEA100F09A4D /* DAReloadActivityButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAReloadActivityButton.m; sourceTree = "<group>"; };
 		DA04AE08164BDEA100F09A4D /* reload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reload.png; sourceTree = "<group>"; };
 		DA04AE09164BDEA100F09A4D /* reload@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reload@2x.png"; sourceTree = "<group>"; };
+		DA0FB28F16AAAC43006E7DE3 /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
+		DA0FB29016AAAC43006E7DE3 /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
+		DA0FB29116AAAC43006E7DE3 /* MoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreViewController.xib; sourceTree = "<group>"; };
 		DA106BD6163EAF2200370C39 /* btn_bar_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_bar_home.png; sourceTree = "<group>"; };
 		DA106BD7163EAF2200370C39 /* btn_bar_home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_bar_home@2x.png"; sourceTree = "<group>"; };
 		DA106BD8163EAF2200370C39 /* btn_bar_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_bar_settings.png; sourceTree = "<group>"; };
@@ -418,12 +419,6 @@
 		DAFFD06A163B95E800AA9FE4 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		DAFFD06B163B95E800AA9FE4 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		DAFFD06C163B95E800AA9FE4 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
-		DAFFD06F163B98E200AA9FE4 /* ChinaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChinaViewController.h; sourceTree = "<group>"; };
-		DAFFD070163B98E200AA9FE4 /* ChinaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChinaViewController.m; sourceTree = "<group>"; };
-		DAFFD071163B98E200AA9FE4 /* ChinaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChinaViewController.xib; sourceTree = "<group>"; };
-		DAFFD074163B993700AA9FE4 /* HotNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotNewsViewController.h; sourceTree = "<group>"; };
-		DAFFD075163B993700AA9FE4 /* HotNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotNewsViewController.m; sourceTree = "<group>"; };
-		DAFFD076163B993700AA9FE4 /* HotNewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotNewsViewController.xib; sourceTree = "<group>"; };
 		DAFFD079163B9B0800AA9FE4 /* Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blue.png; sourceTree = "<group>"; };
 		DAFFD07A163B9B0800AA9FE4 /* Blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Blue@2x.png"; sourceTree = "<group>"; };
 		DAFFD07B163B9B0800AA9FE4 /* MKInfoPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKInfoPanel.h; sourceTree = "<group>"; };
@@ -480,6 +475,16 @@
 				DA04AE09164BDEA100F09A4D /* reload@2x.png */,
 			);
 			name = DAReloadActivity;
+			sourceTree = "<group>";
+		};
+		DA0FB28E16AAABBF006E7DE3 /* MoreViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DA0FB28F16AAAC43006E7DE3 /* MoreViewController.h */,
+				DA0FB29016AAAC43006E7DE3 /* MoreViewController.m */,
+				DA0FB29116AAAC43006E7DE3 /* MoreViewController.xib */,
+			);
+			name = MoreViewController;
 			sourceTree = "<group>";
 		};
 		DA106BEA163EB63D00370C39 /* Entiy */ = {
@@ -571,11 +576,10 @@
 			isa = PBXGroup;
 			children = (
 				DA2C5855164E3B2B004B201A /* AboutViewController */,
+				DA0FB28E16AAABBF006E7DE3 /* MoreViewController */,
 				DA2B17E216452FF400A8DAB5 /* ContentViewController */,
 				DAF5093A163D224D005E27CE /* NewsListController */,
 				DAFFD069163B95C600AA9FE4 /* Settings */,
-				DAFFD068163B956100AA9FE4 /* ChinaView */,
-				DAFFD067163B955300AA9FE4 /* HotNews */,
 				DA264D2216397C5700FAB77A /* Home */,
 			);
 			name = Controllers;
@@ -1086,26 +1090,6 @@
 			name = MBProgress;
 			sourceTree = "<group>";
 		};
-		DAFFD067163B955300AA9FE4 /* HotNews */ = {
-			isa = PBXGroup;
-			children = (
-				DAFFD074163B993700AA9FE4 /* HotNewsViewController.h */,
-				DAFFD075163B993700AA9FE4 /* HotNewsViewController.m */,
-				DAFFD076163B993700AA9FE4 /* HotNewsViewController.xib */,
-			);
-			name = HotNews;
-			sourceTree = "<group>";
-		};
-		DAFFD068163B956100AA9FE4 /* ChinaView */ = {
-			isa = PBXGroup;
-			children = (
-				DAFFD06F163B98E200AA9FE4 /* ChinaViewController.h */,
-				DAFFD070163B98E200AA9FE4 /* ChinaViewController.m */,
-				DAFFD071163B98E200AA9FE4 /* ChinaViewController.xib */,
-			);
-			name = ChinaView;
-			sourceTree = "<group>";
-		};
 		DAFFD069163B95C600AA9FE4 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -1172,8 +1156,6 @@
 				DA264D1D1639773700FAB77A /* MainWindow.xib in Resources */,
 				DA264D2716397C7900FAB77A /* HomeViewController.xib in Resources */,
 				DAFFD06E163B95E800AA9FE4 /* SettingsViewController.xib in Resources */,
-				DAFFD073163B98E200AA9FE4 /* ChinaViewController.xib in Resources */,
-				DAFFD078163B993700AA9FE4 /* HotNewsViewController.xib in Resources */,
 				DAFFD084163B9B0800AA9FE4 /* Blue.png in Resources */,
 				DAFFD085163B9B0800AA9FE4 /* Blue@2x.png in Resources */,
 				DAFFD087163B9B0800AA9FE4 /* MKInfoPanel.xib in Resources */,
@@ -1290,6 +1272,7 @@
 				DA4EA041167F660F006A48EA /* close_btn.png in Resources */,
 				DA4EA042167F660F006A48EA /* close_btn@2x.png in Resources */,
 				DAF0FEE41680922700550A01 /* AppListViewController.xib in Resources */,
+				DA0FB29316AAAC43006E7DE3 /* MoreViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1306,8 +1289,6 @@
 				DAFFD057163B916500AA9FE4 /* Constant.m in Sources */,
 				DAFFD066163B94F600AA9FE4 /* MBProgressHUD.m in Sources */,
 				DAFFD06D163B95E800AA9FE4 /* SettingsViewController.m in Sources */,
-				DAFFD072163B98E200AA9FE4 /* ChinaViewController.m in Sources */,
-				DAFFD077163B993700AA9FE4 /* HotNewsViewController.m in Sources */,
 				DAFFD086163B9B0800AA9FE4 /* MKInfoPanel.m in Sources */,
 				DA2486BB163C016F000107F0 /* NotificationUtil.m in Sources */,
 				DAF5093F163D227E005E27CE /* NewsViewController.m in Sources */,
@@ -1334,6 +1315,7 @@
 				DA2E4D83166CE0F000E69A32 /* AboutUsViewController.m in Sources */,
 				DA2E4D89166CE56200E69A32 /* AHAlertView.m in Sources */,
 				DAF0FEE31680922700550A01 /* AppListViewController.m in Sources */,
+				DA0FB29216AAAC43006E7DE3 /* MoreViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

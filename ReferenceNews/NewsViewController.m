@@ -17,7 +17,7 @@
 
 @implementation NewsViewController
 
-@synthesize tag, newsArray, back;
+@synthesize tag, newsArray;
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -58,12 +58,6 @@
     [self getNews];
 }
 
-- (void)viewDidAppear:(BOOL)animated{
-    self.back = NO;
-    [self.tableView beginUpdates];
-    [self.tableView endUpdates];
-}
-
 - (void)refreshBtnDidTaped{
     [refreshBtn startAnimating];
     [self getNews];
@@ -102,13 +96,7 @@
 }
 
 - (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == selectedRow) {
-        if (back) {
-            UIApplication *app = [UIApplication sharedApplication];
-            UIWindow *window = [app.windows objectAtIndex:0];
-            return window.screen.bounds.size.height - 110;
-        }
-    }
+    
     return 90.0;
 }
 
@@ -191,27 +179,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
-    selectedRow = indexPath.section;
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    back = !back;
-    CGPoint point = CGPointMake(0, 127 * indexPath.section);
     
-    [tableView beginUpdates];
-    [tableView endUpdates];
-    
-    [self.tableView setContentOffset:point
-                            animated:YES];
-    
-    [self performSelector:@selector(showContentView:) withObject:[newsArray objectAtIndex:[indexPath section]] afterDelay:1];
-}
-
-
-- (void)showContentView:(News *)news{
     ContentViewController *detailViewController = [[ContentViewController alloc] initWithNibName:@"ContentViewController" bundle:nil];
-    detailViewController.news = news;
-    [self.navigationController pushViewController:detailViewController animated:NO];
+    detailViewController.news = [newsArray objectAtIndex:[indexPath section]];
+    [self.navigationController pushViewController:detailViewController animated:YES];
 }
+
 #pragma mark - ASIHTTPRequest delegate methods
 - (void)requestFinished:(ASIHTTPRequest *)request{
     NSData *data = [[request responseString] dataUsingEncoding:NSUTF8StringEncoding];

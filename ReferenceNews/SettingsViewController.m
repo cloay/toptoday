@@ -44,7 +44,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-
+    self.title = @"设置";
     self.navigationController.navigationBar.tintColor = NAV_BAR_COLOR;
     settings = [NSUserDefaults standardUserDefaults];
     UILabel * copyLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 30)];

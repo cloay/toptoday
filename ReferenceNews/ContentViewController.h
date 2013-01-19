@@ -12,7 +12,6 @@
 #import "AutoScrollLabel.h"
 #import "GADBannerView.h"
 
-@protocol ContentViewControllerDelegate;
 @interface ContentViewController : UIViewController<ASIHTTPRequestDelegate, UIWebViewDelegate, GADBannerViewDelegate>{
     ASIHTTPRequest *httpRequest;
     BOOL isCanClick;
@@ -25,13 +24,7 @@
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (nonatomic, strong) News *news;
 @property (nonatomic, strong) NSURL *forwardUrl;
-@property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
 
-@property (nonatomic, strong) id <ContentViewControllerDelegate> delegate;
 - (IBAction)toolBarItemTaped:(id)sender;
-@end
 
-@protocol ContentViewControllerDelegate <NSObject>
-
-- (void)backButtonDidTaped;
 @end

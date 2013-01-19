@@ -27,7 +27,7 @@
             title = @"财经时讯";
             break;
         case MILITARYTAG:
-            title = @"军事世界";
+            title = @"军事聚焦";
             break;
         case TANWANTAG:
             title = @"台海动态";
@@ -36,7 +36,7 @@
             title = @"热门观点";
             break;
         case HOTNEWSTAG:
-            title = @"热门新闻";
+            title = @"今日头条";
             break;
         case SEECHINATAG:
             title = @"看中国";

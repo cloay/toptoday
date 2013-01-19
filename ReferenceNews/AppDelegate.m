@@ -10,15 +10,17 @@
 #import "MobClick.h"
 #import "NotificationUtil.h"
 #import "WapsOffer/AppConnect.h"
+#import "HomeViewController.h"
 
 @implementation AppDelegate
 @synthesize window;
-@synthesize tabBarController;
+//@synthesize tabBarController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
     
+    /*
     [tabBarController setSelectedIndex:0];
     self.window.rootViewController = tabBarController;
     
@@ -27,8 +29,11 @@
         [application cancelAllLocalNotifications];
         application.applicationIconBadgeNumber = 0;
         [self.tabBarController setSelectedIndex:1];
-    }
+    }*/
     
+    HomeViewController *homeViewController = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:homeViewController];
+    self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     
     /*
@@ -86,7 +91,7 @@
     [application cancelAllLocalNotifications];
     application.applicationIconBadgeNumber = 0;
 
-    [self.tabBarController setSelectedIndex:1];
+//    [self.tabBarController setSelectedIndex:1];
 }
 
 #pragma mark - GADInterstitial delegate method

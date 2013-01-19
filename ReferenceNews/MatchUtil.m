@@ -41,6 +41,7 @@
  */
 
 + (NSString *)stringWithoutHtmltag:(NSString *)originString{
+    /*****
     //去掉<p>
     NSString *resultNoP = [originString stringByReplacingOccurrencesOfString:@"<p>" withString:@""];
     //去掉</p>
@@ -49,7 +50,23 @@
     resultNoP = [resultNoP stringByReplacingOccurrencesOfString:@"<a target='_blank' href='http://www.chinanews.com/' >" withString:@""];
     resultNoP = [resultNoP stringByReplacingOccurrencesOfString:@"<a target='_blank' href='http://www.chinanews.com/'>" withString:@""];
     resultNoP = [resultNoP stringByReplacingOccurrencesOfString:@"</a>" withString:@""];
-    return resultNoP;
+    return resultNoP;*/
+    originString = [originString stringByReplacingOccurrencesOfString:@"&nbsp;" withString:@""];
+    NSString *subStr = @"";
+    NSRange startRange = [originString rangeOfString:@"<"];
+    if (startRange.location != NSNotFound) {
+        NSRange endRange = [originString rangeOfString:@">"];
+        if (endRange.location != NSNotFound ) {
+            subStr = [originString substringWithRange:NSMakeRange(startRange.location, endRange.location - startRange.location + 1)];
+            originString = [self replaceString:originString withStr:subStr replaceStr:@""];
+            return [self stringWithoutHtmltag:originString];
+        }
+    }
+    return originString;
+}
+
++ (NSString *)replaceString:(NSString *)string withStr:(NSString *)str replaceStr:(NSString *)replace{
+    return  [string stringByReplacingOccurrencesOfString:str withString:replace];
 }
 
 /*

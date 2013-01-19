@@ -8,14 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-#define CHINATAG 0
-#define WORLDTAG 1
-#define FINANCIALTAG 2
-#define VIEWTAG 3
+#define HOTNEWSTAG 0
+#define TANWANTAG 1
+#define CHINATAG 2
+#define SEECHINATAG 3
 #define MILITARYTAG 4
-#define TANWANTAG 5
-#define SEECHINATAG 6
-#define HOTNEWSTAG 7
+#define WORLDTAG 5
+#define FINANCIALTAG 6
+#define VIEWTAG 7
+
 #define KNOTIFICATION @"SwitchStatus"
 #define SERVER @"http://app.cankaoxiaoxi.com"
 #define UMKEY @"508d2a0d527015234e000010"

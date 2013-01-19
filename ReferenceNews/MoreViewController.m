@@ -66,9 +66,17 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     }
     
     // Configure the cell...
+    NSString *imageName = @"world_icon";
+    if (indexPath.row == 1) {
+        imageName = @"fin_icon";
+    }else if (indexPath.row == 2){
+        imageName = @"views_icon";
+    }
+    [cell.imageView setImage:[UIImage imageNamed:imageName]];
     cell.textLabel.text = [newsArray objectAtIndex:indexPath.row];
     return cell;
 }

@@ -33,8 +33,8 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:NO];
 }
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -127,7 +127,7 @@
     NSInteger section = [indexPath section];
     NSInteger row = [indexPath row];
     
-    UISwitch *switchBtn = [[UISwitch alloc] initWithFrame:CGRectMake(210, 8, 50, 25)];
+    UISwitch *switchBtn = [[UISwitch alloc] initWithFrame:CGRectMake(210, 10, 50, 25)];
     [switchBtn addTarget:self action:@selector(switchBtnValueChanged:) forControlEvents:UIControlEventValueChanged];
     [switchBtn setOn:YES];
     //读取用户设置的状态，如果没有设置，默认为打开YES
@@ -137,23 +137,28 @@
 
     switch (section) {
         case 0:
+            [cell.imageView setImage:[UIImage imageNamed:@"share_icon"]];
             cell.textLabel.text = @"分享";
             break;
         case 1:
             if (row == 0) {
+                [cell.imageView setImage:[UIImage imageNamed:@"notifi_icon"]];
                 [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
                 [cell setAccessoryType:UITableViewCellAccessoryNone];
                 cell.textLabel.text = @"打开或关闭通知";
                 [cell.contentView addSubview:switchBtn];
             }else{
+                [cell.imageView setImage:[UIImage imageNamed:@"pingjia_icon"]];
                 cell.textLabel.text = @"精彩推荐";
             }
             
             break;
         case 2:
             if (row == 0) {
+            [cell.imageView setImage:[UIImage imageNamed:@"feedback_icon"]];                
                 cell.textLabel.text = @"用户反馈";
             }else if (row == 1){
+                [cell.imageView setImage:[UIImage imageNamed:@"about_icon"]];
                 cell.textLabel.text = @"关于";
             }
         default:

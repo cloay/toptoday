@@ -79,7 +79,7 @@
     [self.navigationController.toolbar setTintColor:NAV_BAR_COLOR];
     
     UIBarButtonItem *homeItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_bar_home"] style:UIBarButtonItemStylePlain target:self action:@selector(toolBarItemTaped:)];
-    [homeItem setWidth:70];
+    [homeItem setWidth:50];
     homeItem.tag = 0;
     
     UIBarButtonItem *spaceItem = [[UIBarButtonItem alloc] initWithCustomView:[[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200, 44)]];
@@ -87,7 +87,7 @@
     spaceItem.tag = 1;
     
     UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(toolBarItemTaped:)];
-    [shareItem setWidth:70];
+    [shareItem setWidth:80];
     shareItem.tag = 2;
     
     [self setToolbarItems:[NSArray arrayWithObjects:homeItem, spaceItem, shareItem, nil]];

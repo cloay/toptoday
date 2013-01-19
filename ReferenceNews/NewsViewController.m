@@ -121,12 +121,13 @@
     static NSString *CellIdentifier = @"CellNews";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         [cell setBackgroundColor:[UIColor clearColor]];
         [cell.detailTextLabel setNumberOfLines:3];
     }
     
     // Configure the cell...
+    
     News *news = [self.newsArray objectAtIndex:[indexPath section]];
     cell.textLabel.text = news.title;
     

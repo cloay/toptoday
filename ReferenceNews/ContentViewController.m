@@ -139,6 +139,11 @@
     [self initAdmob];
 }
 
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.navigationController setToolbarHidden:YES animated:YES];
+}
+
 /* not needed
 - (void)hideToolBar{
     [UIView animateWithDuration:0.5 animations:^{
@@ -215,8 +220,10 @@
 - (void)adViewDidReceiveAd:(GADBannerView *)bannerView {
     close_ad_btn.hidden = NO;
     [UIView beginAnimations:@"BannerSlide" context:nil];
-    [bannerView_ setCenter:CGPointMake(bannerView_.center.x, bannerView_.center.y + 100)];
-    [close_ad_btn setCenter:CGPointMake(close_ad_btn.center.x, close_ad_btn.center.y + 98)];
+    if (bannerView_.center.y <= -50) {
+        [bannerView_ setCenter:CGPointMake(bannerView_.center.x, bannerView_.center.y + 100)];
+        [close_ad_btn setCenter:CGPointMake(close_ad_btn.center.x, close_ad_btn.center.y + 98)];
+    }
     [UIView commitAnimations];
 }
 

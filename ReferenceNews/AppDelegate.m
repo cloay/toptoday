@@ -11,6 +11,7 @@
 #import "NotificationUtil.h"
 #import "WapsOffer/AppConnect.h"
 #import "HomeViewController.h"
+#import "NewsViewController.h"
 
 @implementation AppDelegate
 @synthesize window;
@@ -22,17 +23,18 @@
     
     /*
     [tabBarController setSelectedIndex:0];
-    self.window.rootViewController = tabBarController;
+    self.window.rootViewController = tabBarController;*/
     
+    HomeViewController *homeViewController = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:homeViewController];
     UILocalNotification *notifi = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
     if (notifi) {
         [application cancelAllLocalNotifications];
         application.applicationIconBadgeNumber = 0;
-        [self.tabBarController setSelectedIndex:1];
-    }*/
-    
-    HomeViewController *homeViewController = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:homeViewController];
+        
+        NewsViewController *newsViewController = [[NewsViewController alloc] initWithNibName:@"NewsViewController" bundle:nil];
+        [nav pushViewController:newsViewController animated:YES];
+    }
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     
@@ -91,7 +93,8 @@
     [application cancelAllLocalNotifications];
     application.applicationIconBadgeNumber = 0;
 
-//    [self.tabBarController setSelectedIndex:1];
+    NewsViewController *newsViewController = [[NewsViewController alloc] initWithNibName:@"NewsViewController" bundle:nil];
+    [self.window.rootViewController.navigationController pushViewController:newsViewController animated:YES];
 }
 
 #pragma mark - GADInterstitial delegate method

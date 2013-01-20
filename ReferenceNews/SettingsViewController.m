@@ -84,7 +84,7 @@
             number = 2;
             break;
         case 2:
-            number = 2;
+            number = 3;
             break;
         default:
             break;
@@ -160,6 +160,9 @@
             }else if (row == 1){
                 [cell.imageView setImage:[UIImage imageNamed:@"about_icon"]];
                 cell.textLabel.text = @"关于";
+            }else if (row == 2){
+                [cell.imageView setImage:[UIImage imageNamed:@"dafei_icon"]];
+                cell.textLabel.text = @"评价打分一把";
             }
         default:
             break;
@@ -241,6 +244,8 @@
                 AboutUsViewController *aboutView = [[AboutUsViewController alloc] initWithNibName:@"AboutUsViewController" bundle:nil];
                 aboutView.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:aboutView animated:YES];
+            }else if (row == 2){
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:APPSTORE]];
             }
         default:
             break;
@@ -251,7 +256,7 @@
 #pragma mark
 - (void)showShareList{
     NSString *shareText = @"#今日头条#我正在使用今日头条参考消息专版看新闻，很方便，你也试一下吧！";
-    UIImage *shareImage = [UIImage imageNamed:@"share_image"];
+    UIImage *shareImage = [UIImage imageNamed:@"share_home_image"];
     [UMSNSService showSNSActionSheetInController:self appkey:UMKEY status:shareText image:shareImage];
 }
 

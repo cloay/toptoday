@@ -53,9 +53,9 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<string key="IBUINormalTitle">国内焦点</string>
-						<object class="NSColor" key="IBUIHighlightedTitleColor" id="986578568">
+						<object class="NSColor" key="IBUIHighlightedTitleColor" id="512493590">
 							<int key="NSColorSpace">3</int>
-							<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
+							<bytes key="NSWhite">MC4zMzMzMzMzMzMzAA</bytes>
 						</object>
 						<object class="NSColor" key="IBUINormalTitleColor" id="821538778">
 							<int key="NSColorSpace">3</int>
@@ -89,7 +89,7 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<string key="IBUINormalTitle">更多</string>
-						<reference key="IBUIHighlightedTitleColor" ref="986578568"/>
+						<reference key="IBUIHighlightedTitleColor" ref="512493590"/>
 						<reference key="IBUINormalTitleColor" ref="821538778"/>
 						<reference key="IBUINormalTitleShadowColor" ref="995175452"/>
 						<reference key="IBUIFontDescription" ref="490168770"/>
@@ -110,7 +110,7 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<string key="IBUINormalTitle">看中国</string>
-						<reference key="IBUIHighlightedTitleColor" ref="986578568"/>
+						<reference key="IBUIHighlightedTitleColor" ref="512493590"/>
 						<reference key="IBUINormalTitleColor" ref="821538778"/>
 						<reference key="IBUINormalTitleShadowColor" ref="995175452"/>
 						<reference key="IBUIFontDescription" ref="490168770"/>
@@ -131,7 +131,7 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<string key="IBUINormalTitle">台海动态</string>
-						<reference key="IBUIHighlightedTitleColor" ref="986578568"/>
+						<reference key="IBUIHighlightedTitleColor" ref="512493590"/>
 						<reference key="IBUINormalTitleColor" ref="821538778"/>
 						<reference key="IBUINormalTitleShadowColor" ref="995175452"/>
 						<reference key="IBUIFontDescription" ref="490168770"/>
@@ -152,7 +152,7 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<string key="IBUINormalTitle">军事聚焦</string>
-						<reference key="IBUIHighlightedTitleColor" ref="986578568"/>
+						<reference key="IBUIHighlightedTitleColor" ref="512493590"/>
 						<reference key="IBUINormalTitleColor" ref="821538778"/>
 						<reference key="IBUINormalTitleShadowColor" ref="995175452"/>
 						<reference key="IBUIFontDescription" ref="490168770"/>
@@ -173,7 +173,7 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<string key="IBUINormalTitle">设置</string>
-						<reference key="IBUIHighlightedTitleColor" ref="986578568"/>
+						<reference key="IBUIHighlightedTitleColor" ref="512493590"/>
 						<reference key="IBUINormalTitleColor" ref="821538778"/>
 						<reference key="IBUINormalTitleShadowColor" ref="995175452"/>
 						<reference key="IBUIFontDescription" ref="490168770"/>
@@ -193,7 +193,7 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<string key="IBUINormalTitle">今日头条</string>
-						<reference key="IBUIHighlightedTitleColor" ref="986578568"/>
+						<reference key="IBUIHighlightedTitleColor" ref="512493590"/>
 						<reference key="IBUINormalTitleColor" ref="821538778"/>
 						<reference key="IBUINormalTitleShadowColor" ref="995175452"/>
 						<reference key="IBUIFontDescription" ref="490168770"/>
@@ -214,7 +214,7 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<string key="IBUINormalTitle">关于</string>
-						<reference key="IBUIHighlightedTitleColor" ref="986578568"/>
+						<reference key="IBUIHighlightedTitleColor" ref="512493590"/>
 						<reference key="IBUINormalTitleColor" ref="821538778"/>
 						<reference key="IBUINormalTitleShadowColor" ref="995175452"/>
 						<reference key="IBUIFontDescription" ref="490168770"/>
@@ -422,21 +422,21 @@
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="1.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="139.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<real value="1" key="139.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<real value="0.0" key="139.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="169.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<real value="1" key="169.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<real value="0.0" key="169.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="21.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<real value="1" key="21.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<real value="0.0" key="21.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="329.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<real value="1" key="329.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<real value="0.0" key="329.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="330.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<real value="1" key="330.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<real value="0.0" key="330.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<real value="1" key="4.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<real value="0.0" key="4.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="75.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<real value="1" key="75.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<real value="0.0" key="75.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="9.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<real value="1" key="9.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<real value="0.0" key="9.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>

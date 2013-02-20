@@ -41,7 +41,6 @@
 		DA264D09163976CF00FAB77A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA264D07163976CF00FAB77A /* InfoPlist.strings */; };
 		DA264D0B163976CF00FAB77A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA264D0A163976CF00FAB77A /* main.m */; };
 		DA264D0F163976CF00FAB77A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA264D0E163976CF00FAB77A /* AppDelegate.m */; };
-		DA264D15163976CF00FAB77A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA264D14163976CF00FAB77A /* Default-568h@2x.png */; };
 		DA264D1D1639773700FAB77A /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA264D1C1639773700FAB77A /* MainWindow.xib */; };
 		DA264D2616397C7900FAB77A /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA264D2416397C7900FAB77A /* HomeViewController.m */; };
 		DA264D2716397C7900FAB77A /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA264D2516397C7900FAB77A /* HomeViewController.xib */; };
@@ -163,6 +162,7 @@
 		DAD4C4FB164005D8002DF588 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD4C4FA164005D8002DF588 /* Security.framework */; };
 		DAE3D85A164174DE001ECEAD /* DateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE3D859164174DE001ECEAD /* DateUtil.m */; };
 		DAEF6EB416D4F923007F2CE3 /* share_home_image.png in Resources */ = {isa = PBXBuildFile; fileRef = DAEF6EB316D4F923007F2CE3 /* share_home_image.png */; };
+		DAEF6EB616D4FBE8007F2CE3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAEF6EB516D4FBE8007F2CE3 /* Default-568h@2x.png */; };
 		DAF0FED91680906000550A01 /* WapsOffer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF0FED81680906000550A01 /* WapsOffer.framework */; };
 		DAF0FEDF168090B400550A01 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF0FEDE168090B400550A01 /* CoreTelephony.framework */; };
 		DAF0FEE31680922700550A01 /* AppListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF0FEE11680922700550A01 /* AppListViewController.m */; };
@@ -229,7 +229,6 @@
 		DA264D0C163976CF00FAB77A /* ReferenceNews-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReferenceNews-Prefix.pch"; sourceTree = "<group>"; };
 		DA264D0D163976CF00FAB77A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DA264D0E163976CF00FAB77A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DA264D14163976CF00FAB77A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		DA264D1C1639773700FAB77A /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		DA264D2316397C7900FAB77A /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		DA264D2416397C7900FAB77A /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
@@ -401,6 +400,7 @@
 		DAE3D858164174DE001ECEAD /* DateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateUtil.h; sourceTree = "<group>"; };
 		DAE3D859164174DE001ECEAD /* DateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateUtil.m; sourceTree = "<group>"; };
 		DAEF6EB316D4F923007F2CE3 /* share_home_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_home_image.png; sourceTree = "<group>"; };
+		DAEF6EB516D4FBE8007F2CE3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		DAF0FED81680906000550A01 /* WapsOffer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WapsOffer.framework; path = ../../../../Downloads/WAPS_IOS_1.1.4/WapsOffer.framework; sourceTree = "<group>"; };
 		DAF0FEDE168090B400550A01 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		DAF0FEE01680922700550A01 /* AppListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppListViewController.h; sourceTree = "<group>"; };
@@ -582,7 +582,6 @@
 				DA264D07163976CF00FAB77A /* InfoPlist.strings */,
 				DA264D0A163976CF00FAB77A /* main.m */,
 				DA264D0C163976CF00FAB77A /* ReferenceNews-Prefix.pch */,
-				DA264D14163976CF00FAB77A /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -998,6 +997,7 @@
 		DAF5094E163D39D4005E27CE /* icon */ = {
 			isa = PBXGroup;
 			children = (
+				DAEF6EB516D4FBE8007F2CE3 /* Default-568h@2x.png */,
 				DA6B01D9166E446800F87809 /* Default@2x.png */,
 				DA6B01D7166E446000F87809 /* Default.png */,
 				DA2E4D98166CF28C00E69A32 /* icon@2x.png */,
@@ -1152,7 +1152,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA264D09163976CF00FAB77A /* InfoPlist.strings in Resources */,
-				DA264D15163976CF00FAB77A /* Default-568h@2x.png in Resources */,
 				DA264D1D1639773700FAB77A /* MainWindow.xib in Resources */,
 				DA264D2716397C7900FAB77A /* HomeViewController.xib in Resources */,
 				DAFFD06E163B95E800AA9FE4 /* SettingsViewController.xib in Resources */,
@@ -1273,6 +1272,7 @@
 				DA4B2AD616ABAAA200B4D17D /* dafei_icon.png in Resources */,
 				DA4B2AD716ABAAA200B4D17D /* dafei_icon@2x.png in Resources */,
 				DAEF6EB416D4F923007F2CE3 /* share_home_image.png in Resources */,
+				DAEF6EB616D4FBE8007F2CE3 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

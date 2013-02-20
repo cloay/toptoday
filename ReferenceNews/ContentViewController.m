@@ -147,13 +147,6 @@
     [self.navigationController setToolbarHidden:YES animated:YES];
 }
 
-/* not needed
-- (void)hideToolBar{
-    [UIView animateWithDuration:0.5 animations:^{
-        [self.toolBar setCenter:CGPointMake(160, self.toolBar.center.y + 44)];
-    }];
-}*/
-
 - (void)dealloc{
     [httpRequest clearDelegatesAndCancel];
 }

@@ -103,7 +103,10 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [titleLabel scroll];    
+    [titleLabel scroll];
+    if (errorLabel.hidden) {
+        [self.navigationController setToolbarHidden:NO animated:YES];
+    }
 }
 - (void)getNewsContent{
     errorLabel.hidden = YES;
@@ -130,8 +133,8 @@
 }
 
 - (void)showShareList{
-    NSString *shareText = [titleLabel.text stringByAppendingString:self.news.urlStr];
-    [UMSNSService showSNSActionSheetInController:self.navigationController appkey:UMKEY status:[@"#今日头条#" stringByAppendingString:shareText] image:nil];
+    NSString *shareText = [NSString stringWithFormat:@"#今日头条+#%@ appstore地址：https://itunes.apple.com/cn/app/jin-ri-tou-tiao+/id588693815?mt=8", [titleLabel.text stringByAppendingString:self.news.urlStr]];
+    [UMSNSService showSNSActionSheetInController:self.navigationController appkey:UMKEY status:shareText image:nil];
 }
 
 - (void)showToolBar{

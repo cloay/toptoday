@@ -255,7 +255,7 @@
 
 #pragma mark
 - (void)showShareList{
-    NSString *shareText = @"#今日头条#我正在使用今日头条参考消息专版看新闻，很方便，你也试一下吧！";
+    NSString *shareText = @"#今日头条#我正在使用今日头条参考消息专版看新闻，很方便，你也试一下吧！appstore地址: https://itunes.apple.com/cn/app/jin-ri-tou-tiao+/id588693815?mt=8";
     UIImage *shareImage = [UIImage imageNamed:@"share_home_image"];
     [UMSNSService showSNSActionSheetInController:self appkey:UMKEY status:shareText image:shareImage];
 }

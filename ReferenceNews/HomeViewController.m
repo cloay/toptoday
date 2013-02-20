@@ -50,6 +50,13 @@
     // Do any additional setup after loading the view from its nib.
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     self.navigationController.navigationBar.tintColor = NAV_BAR_COLOR;
+    if (DEVICE_IS_IPHONE5) {
+        //reset military button frame
+        [_mButton setFrame:CGRectMake(_mButton.frame.origin.x, _mButton.frame.origin.y - 87, _mButton.frame.size.width, _mButton.frame.size.height + 87)];
+        
+        //reset more button frame
+        [_moreButton setFrame:CGRectMake(_moreButton.frame.origin.x, _moreButton.frame.origin.y - 88, _moreButton.frame.size.width, _moreButton.frame.size.height + 88)];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -67,4 +74,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidUnload {
+    [self setMButton:nil];
+    [self setMoreButton:nil];
+    [super viewDidUnload];
+}
 @end

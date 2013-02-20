@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface HomeViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *moreButton;
+@property (weak, nonatomic) IBOutlet UIButton *mButton;
 - (IBAction)homeButtonDidPressed:(id)sender;
 @end

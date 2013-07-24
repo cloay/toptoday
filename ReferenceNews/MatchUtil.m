@@ -69,6 +69,19 @@
     return  [string stringByReplacingOccurrencesOfString:str withString:replace];
 }
 
++ (NSString *)addStyleToNews:(NSString *)news{
+    NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+    float fontSize = [settings integerForKey:@"fontsize"];
+    return [NSString stringWithFormat:@"<html> \n"
+            "<head> \n"
+            "<style type=\"text/css\"> \n"
+            "body {font-size: %f;}\n"
+            "</style> \n"
+            "</head> \n"
+            "<body>%@</body> \n"
+            "</html>", fontSize <= 14 ? 16 : fontSize, news];
+}
+
 /*
  截取新闻原文
  @parm:

@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "MobClick.h"
 #import "NotificationUtil.h"
-#import "WapsOffer/AppConnect.h"
 #import "HomeViewController.h"
 #import "NewsViewController.h"
 
@@ -53,7 +52,6 @@
     [MobClick startWithAppkey:UMKEY reportPolicy:REALTIME channelId:nil];
     [MobClick checkUpdate];
     
-    [AppConnect getConnect:WAPS_ID pid:@"appstore"];
     return YES;
 }
 

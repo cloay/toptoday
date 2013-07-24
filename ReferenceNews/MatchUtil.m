@@ -75,10 +75,15 @@
  originString:原始字符串
  */
 + (NSString *)stringNewsContent:(NSString *)originString{
+    CLog(@"Content--->%@", originString);
     NSString *content = nil;
     NSRange startRange = [originString rangeOfString:@"来源："];
     if (startRange.location != NSNotFound) {
         NSRange endRange = [originString rangeOfString:@"到首页看看"];
+        if (endRange.location == NSNotFound) {
+            endRange = [originString rangeOfString:@"更多精彩内容"];
+        }
+        
         if (endRange.location != NSNotFound) {
             NSString *contentBeta = [originString substringWithRange:NSMakeRange(startRange.location, endRange.location - startRange.location)];
             NSRange endLink = [contentBeta rangeOfString:@"</span>"];

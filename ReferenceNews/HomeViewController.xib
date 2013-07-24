@@ -3,12 +3,12 @@
 	<data>
 		<int key="IBDocument.SystemTarget">1280</int>
 		<string key="IBDocument.SystemVersion">12A269</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2840</string>
+		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
 		<string key="IBDocument.AppKitVersion">1187</string>
 		<string key="IBDocument.HIToolboxVersion">624.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">1926</string>
+			<string key="NS.object.0">2083</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IBProxyObject</string>
@@ -81,14 +81,15 @@
 						<string key="NSFrame">{{166, 388}, {138, 54}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="863966369"/>
 						<bool key="IBUIOpaque">NO</bool>
-						<int key="IBUITag">7</int>
+						<int key="IBUITag">6</int>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
-						<string key="IBUINormalTitle">更多</string>
+						<string key="IBUINormalTitle">关于</string>
 						<reference key="IBUIHighlightedTitleColor" ref="512493590"/>
 						<reference key="IBUINormalTitleColor" ref="821538778"/>
 						<reference key="IBUINormalTitleShadowColor" ref="995175452"/>
@@ -168,11 +169,11 @@
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="863966369"/>
 						<bool key="IBUIOpaque">NO</bool>
-						<int key="IBUITag">5</int>
+						<int key="IBUITag">7</int>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
-						<string key="IBUINormalTitle">设置</string>
+						<string key="IBUINormalTitle">更多</string>
 						<reference key="IBUIHighlightedTitleColor" ref="512493590"/>
 						<reference key="IBUINormalTitleColor" ref="821538778"/>
 						<reference key="IBUINormalTitleShadowColor" ref="995175452"/>
@@ -209,11 +210,11 @@
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="863966369"/>
 						<bool key="IBUIOpaque">NO</bool>
-						<int key="IBUITag">6</int>
+						<int key="IBUITag">5</int>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
-						<string key="IBUINormalTitle">关于</string>
+						<string key="IBUINormalTitle">设置</string>
 						<reference key="IBUIHighlightedTitleColor" ref="512493590"/>
 						<reference key="IBUINormalTitleColor" ref="821538778"/>
 						<reference key="IBUINormalTitleShadowColor" ref="995175452"/>
@@ -505,6 +506,6 @@
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
-		<string key="IBCocoaTouchPluginVersion">1926</string>
+		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>
 </archive>

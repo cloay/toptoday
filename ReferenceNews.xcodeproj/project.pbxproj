@@ -163,10 +163,7 @@
 		DAE3D85A164174DE001ECEAD /* DateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE3D859164174DE001ECEAD /* DateUtil.m */; };
 		DAEF6EB416D4F923007F2CE3 /* share_home_image.png in Resources */ = {isa = PBXBuildFile; fileRef = DAEF6EB316D4F923007F2CE3 /* share_home_image.png */; };
 		DAEF6EB616D4FBE8007F2CE3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAEF6EB516D4FBE8007F2CE3 /* Default-568h@2x.png */; };
-		DAF0FED91680906000550A01 /* WapsOffer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF0FED81680906000550A01 /* WapsOffer.framework */; };
 		DAF0FEDF168090B400550A01 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF0FEDE168090B400550A01 /* CoreTelephony.framework */; };
-		DAF0FEE31680922700550A01 /* AppListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF0FEE11680922700550A01 /* AppListViewController.m */; };
-		DAF0FEE41680922700550A01 /* AppListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAF0FEE21680922700550A01 /* AppListViewController.xib */; };
 		DAF5093F163D227E005E27CE /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF5093D163D227E005E27CE /* NewsViewController.m */; };
 		DAF50940163D227E005E27CE /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAF5093E163D227E005E27CE /* NewsViewController.xib */; };
 		DAFFD057163B916500AA9FE4 /* Constant.m in Sources */ = {isa = PBXBuildFile; fileRef = DAFFD056163B916500AA9FE4 /* Constant.m */; };
@@ -401,11 +398,7 @@
 		DAE3D859164174DE001ECEAD /* DateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateUtil.m; sourceTree = "<group>"; };
 		DAEF6EB316D4F923007F2CE3 /* share_home_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_home_image.png; sourceTree = "<group>"; };
 		DAEF6EB516D4FBE8007F2CE3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
-		DAF0FED81680906000550A01 /* WapsOffer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WapsOffer.framework; path = ../../../../Downloads/WAPS_IOS_1.1.4/WapsOffer.framework; sourceTree = "<group>"; };
 		DAF0FEDE168090B400550A01 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
-		DAF0FEE01680922700550A01 /* AppListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppListViewController.h; sourceTree = "<group>"; };
-		DAF0FEE11680922700550A01 /* AppListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppListViewController.m; sourceTree = "<group>"; };
-		DAF0FEE21680922700550A01 /* AppListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppListViewController.xib; sourceTree = "<group>"; };
 		DAF5093C163D227E005E27CE /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		DAF5093D163D227E005E27CE /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		DAF5093E163D227E005E27CE /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
@@ -439,7 +432,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAF0FEDF168090B400550A01 /* CoreTelephony.framework in Frameworks */,
-				DAF0FED91680906000550A01 /* WapsOffer.framework in Frameworks */,
 				DA4BBE5D167A132800D1ABF1 /* StoreKit.framework in Frameworks */,
 				DA4BBE5B167A125300D1ABF1 /* AdSupport.framework in Frameworks */,
 				DA4BBE59167A0BF400D1ABF1 /* AudioToolbox.framework in Frameworks */,
@@ -542,7 +534,6 @@
 			isa = PBXGroup;
 			children = (
 				DAF0FEDE168090B400550A01 /* CoreTelephony.framework */,
-				DAF0FED81680906000550A01 /* WapsOffer.framework */,
 				DA4BBE5C167A132800D1ABF1 /* StoreKit.framework */,
 				DA4BBE5A167A125300D1ABF1 /* AdSupport.framework */,
 				DA4BBE58167A0BF300D1ABF1 /* AudioToolbox.framework */,
@@ -940,9 +931,6 @@
 				DA4EA03F167F660F006A48EA /* close_btn.png */,
 				DA4EA040167F660F006A48EA /* close_btn@2x.png */,
 				DA4BBDBE167A08A100D1ABF1 /* admob */,
-				DAF0FEE01680922700550A01 /* AppListViewController.h */,
-				DAF0FEE11680922700550A01 /* AppListViewController.m */,
-				DAF0FEE21680922700550A01 /* AppListViewController.xib */,
 			);
 			name = AD;
 			sourceTree = "<group>";
@@ -1251,7 +1239,6 @@
 				DA6B01DA166E446800F87809 /* Default@2x.png in Resources */,
 				DA4EA041167F660F006A48EA /* close_btn.png in Resources */,
 				DA4EA042167F660F006A48EA /* close_btn@2x.png in Resources */,
-				DAF0FEE41680922700550A01 /* AppListViewController.xib in Resources */,
 				DA0FB29316AAAC43006E7DE3 /* MoreViewController.xib in Resources */,
 				DA0FB2A116AACFB0006E7DE3 /* about_icon.png in Resources */,
 				DA0FB2A216AACFB0006E7DE3 /* about_icon@2x.png in Resources */,
@@ -1314,7 +1301,6 @@
 				DA2E4D77166CD20400E69A32 /* AutoScrollLabel.m in Sources */,
 				DA2E4D83166CE0F000E69A32 /* AboutUsViewController.m in Sources */,
 				DA2E4D89166CE56200E69A32 /* AHAlertView.m in Sources */,
-				DAF0FEE31680922700550A01 /* AppListViewController.m in Sources */,
 				DA0FB29216AAAC43006E7DE3 /* MoreViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

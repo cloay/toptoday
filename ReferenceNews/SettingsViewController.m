@@ -12,7 +12,6 @@
 #import "UMSNSService.h"
 #import "AboutUsViewController.h"
 #import "MobClick.h"
-#import "AppListViewController.h"
 
 
 @interface SettingsViewController ()
@@ -69,7 +68,7 @@
 {
 
     // Return the number of sections.
-    return 3;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -78,12 +77,9 @@
     int number = 0;
     switch (section) {
         case 0:
-            number = 1;
-            break;
-        case 1:
             number = 2;
             break;
-        case 2:
+        case 1:
             number = 3;
             break;
         default:
@@ -137,10 +133,6 @@
 
     switch (section) {
         case 0:
-            [cell.imageView setImage:[UIImage imageNamed:@"share_icon"]];
-            cell.textLabel.text = @"分享";
-            break;
-        case 1:
             if (row == 0) {
                 [cell.imageView setImage:[UIImage imageNamed:@"notifi_icon"]];
                 [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
@@ -148,12 +140,12 @@
                 cell.textLabel.text = @"打开或关闭通知";
                 [cell.contentView addSubview:switchBtn];
             }else{
-                [cell.imageView setImage:[UIImage imageNamed:@"pingjia_icon"]];
-                cell.textLabel.text = @"精彩推荐";
+                [cell.imageView setImage:[UIImage imageNamed:@"share_icon"]];
+                cell.textLabel.text = @"分享";
             }
             
             break;
-        case 2:
+        case 1:
             if (row == 0) {
             [cell.imageView setImage:[UIImage imageNamed:@"feedback_icon"]];                
                 cell.textLabel.text = @"用户反馈";
@@ -228,16 +220,11 @@
     NSInteger row = [indexPath row];
     switch (section) {
         case 0: //分享
-            [self showShareList];
-            break;
-        case 1:
             if (row == 1) {
-                AppListViewController *appListViewController = [[AppListViewController alloc] initWithNibName:@"AppListViewController" bundle:nil];
-                appListViewController.hidesBottomBarWhenPushed = YES;
-                [self.navigationController pushViewController:appListViewController animated:YES];
+                [self showShareList];
             }
             break;
-        case 2:
+        case 1:
             if (row == 0) {
                 [UMFeedback showFeedback:self withAppkey:UMKEY];
             }else if(row == 1){//关于
@@ -247,6 +234,7 @@
             }else if (row == 2){
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:APPSTORE]];
             }
+            break;
         default:
             break;
     }

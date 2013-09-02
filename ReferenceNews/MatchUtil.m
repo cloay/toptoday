@@ -70,16 +70,12 @@
 }
 
 + (NSString *)addStyleToNews:(NSString *)news{
+    int fontSize = 4;
     NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
-    float fontSize = [settings integerForKey:@"fontsize"];
-    return [NSString stringWithFormat:@"<html> \n"
-            "<head> \n"
-            "<style type=\"text/css\"> \n"
-            "body {font-size: %f;}\n"
-            "</style> \n"
-            "</head> \n"
-            "<body>%@</body> \n"
-            "</html>", fontSize <= 14 ? 16 : fontSize, news];
+    fontSize = [settings integerForKey:@"fontsize"];
+    if (fontSize < 3)
+        fontSize = 3;
+    return [NSString stringWithFormat:@"<body><font size =\"%d\">%@</body>", fontSize, news];
 }
 
 /*

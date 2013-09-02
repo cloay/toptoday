@@ -48,6 +48,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.title = @"首页";
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     self.navigationController.navigationBar.tintColor = NAV_BAR_COLOR;
     if (DEVICE_IS_IPHONE5) {

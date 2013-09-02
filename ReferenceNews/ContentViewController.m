@@ -184,7 +184,7 @@
     NSString *content = [MatchUtil stringNewsContent:[request responseString]];
     if (content) {
         [self showToolBar];
-        [_webView loadHTMLString:content baseURL:nil];
+        [_webView loadHTMLString:[MatchUtil addStyleToNews:content] baseURL:nil];
     }else{
         errorLabel.hidden = NO;
         [MKInfoPanel showPanelInView:self.view type:MKInfoPanelTypeError title:@"提示" subtitle:@"加载数据失败，请稍后重试！" hideAfter:2];

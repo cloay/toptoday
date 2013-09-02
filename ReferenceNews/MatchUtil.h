@@ -34,4 +34,6 @@
  originString:原始字符串
  */
 + (NSString *)stringNewsContent:(NSString *)originString;
+
++ (NSString *)addStyleToNews:(NSString *)news;
 @end

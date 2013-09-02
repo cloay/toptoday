@@ -77,7 +77,7 @@
     int number = 0;
     switch (section) {
         case 0:
-            number = 2;
+            number = 3;
             break;
         case 1:
             number = 3;
@@ -122,22 +122,32 @@
     // Configure the cell...
     NSInteger section = [indexPath section];
     NSInteger row = [indexPath row];
-    
-    UISwitch *switchBtn = [[UISwitch alloc] initWithFrame:CGRectMake(210, 10, 50, 25)];
-    [switchBtn addTarget:self action:@selector(switchBtnValueChanged:) forControlEvents:UIControlEventValueChanged];
-    [switchBtn setOn:YES];
-    //读取用户设置的状态，如果没有设置，默认为打开YES
-    if ([settings objectForKey:KNOTIFICATION]) {
-        [switchBtn setOn:[settings boolForKey:KNOTIFICATION]];
-    }
 
     switch (section) {
         case 0:
             if (row == 0) {
+                [cell.imageView setImage:[UIImage imageNamed:@"font_icon"]];
+                [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+                [cell setAccessoryType:UITableViewCellAccessoryNone];
+                cell.textLabel.text = @"设置字体大小";
+                UISegmentedControl *sgControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"小", @"中", @"大", nil]];
+                [sgControl setFrame:CGRectMake(200, 8, 90, 30)];
+                int fontSize = [settings integerForKey:@"fontsize"];
+                [sgControl setSelectedSegmentIndex:fontSize];
+                [sgControl addTarget:self action:@selector(sgControlValueChanged:) forControlEvents:UIControlEventValueChanged];
+                [cell.contentView addSubview:sgControl];
+            }else if (row == 1) {
                 [cell.imageView setImage:[UIImage imageNamed:@"notifi_icon"]];
                 [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
                 [cell setAccessoryType:UITableViewCellAccessoryNone];
                 cell.textLabel.text = @"打开或关闭通知";
+                UISwitch *switchBtn = [[UISwitch alloc] initWithFrame:CGRectMake(210, 10, 50, 25)];
+                [switchBtn addTarget:self action:@selector(switchBtnValueChanged:) forControlEvents:UIControlEventValueChanged];
+                [switchBtn setOn:YES];
+                //读取用户设置的状态，如果没有设置，默认为打开YES
+                if ([settings objectForKey:KNOTIFICATION]) {
+                    [switchBtn setOn:[settings boolForKey:KNOTIFICATION]];
+                }
                 [cell.contentView addSubview:switchBtn];
             }else{
                 [cell.imageView setImage:[UIImage imageNamed:@"share_icon"]];
@@ -160,6 +170,10 @@
             break;
     }
     return cell;
+}
+
+- (IBAction)sgControlValueChanged:(UISegmentedControl *)sender{
+    [settings setValue:[NSNumber numberWithInt:sender.selectedSegmentIndex] forKey:@"fontsize"];
 }
 
 - (IBAction)switchBtnValueChanged:(id)sender{
@@ -220,7 +234,7 @@
     NSInteger row = [indexPath row];
     switch (section) {
         case 0: //分享
-            if (row == 1) {
+            if (row == 2) {
                 [self showShareList];
             }
             break;

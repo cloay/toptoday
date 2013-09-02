@@ -134,6 +134,7 @@
 		DA2E4D99166CF28C00E69A32 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2E4D98166CF28C00E69A32 /* icon@2x.png */; };
 		DA377EC217D4C9070009F1C0 /* font_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DA377EC017D4C9070009F1C0 /* font_icon.png */; };
 		DA377EC317D4C9070009F1C0 /* font_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA377EC117D4C9070009F1C0 /* font_icon@2x.png */; };
+		DA377EC617D4E7840009F1C0 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA377EC417D4E7840009F1C0 /* libMobClickLibrary.a */; };
 		DA4B2AD616ABAAA200B4D17D /* dafei_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DA4B2AD416ABAAA200B4D17D /* dafei_icon.png */; };
 		DA4B2AD716ABAAA200B4D17D /* dafei_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA4B2AD516ABAAA200B4D17D /* dafei_icon@2x.png */; };
 		DA4BBE54167A08A100D1ABF1 /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA4BBE20167A08A100D1ABF1 /* libGoogleAdMobAds.a */; };
@@ -144,7 +145,6 @@
 		DA4EA042167F660F006A48EA /* close_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA4EA040167F660F006A48EA /* close_btn@2x.png */; };
 		DA55F4E6163D631600CABAA5 /* libUMFeedback.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA55F4E3163D631600CABAA5 /* libUMFeedback.a */; };
 		DA55F4E7163D631600CABAA5 /* umFeedback.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DA55F4E4163D631600CABAA5 /* umFeedback.bundle */; };
-		DA55F4EA163D64E600CABAA5 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA55F4E8163D64E600CABAA5 /* libMobClickLibrary.a */; };
 		DA55F4EC163D650600CABAA5 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DA55F4EB163D650600CABAA5 /* libz.dylib */; };
 		DA6B01D8166E446000F87809 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DA6B01D7166E446000F87809 /* Default.png */; };
 		DA6B01DA166E446800F87809 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA6B01D9166E446800F87809 /* Default@2x.png */; };
@@ -332,6 +332,8 @@
 		DA2E4D98166CF28C00E69A32 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
 		DA377EC017D4C9070009F1C0 /* font_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = font_icon.png; sourceTree = "<group>"; };
 		DA377EC117D4C9070009F1C0 /* font_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "font_icon@2x.png"; sourceTree = "<group>"; };
+		DA377EC417D4E7840009F1C0 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		DA377EC517D4E7840009F1C0 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		DA4B2AD416ABAAA200B4D17D /* dafei_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dafei_icon.png; sourceTree = "<group>"; };
 		DA4B2AD516ABAAA200B4D17D /* dafei_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dafei_icon@2x.png"; sourceTree = "<group>"; };
 		DA4BBDC1167A08A100D1ABF1 /* DFPBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFPBannerView.h; sourceTree = "<group>"; };
@@ -365,8 +367,6 @@
 		DA55F4E3163D631600CABAA5 /* libUMFeedback.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMFeedback.a; sourceTree = "<group>"; };
 		DA55F4E4163D631600CABAA5 /* umFeedback.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = umFeedback.bundle; sourceTree = "<group>"; };
 		DA55F4E5163D631600CABAA5 /* UMFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMFeedback.h; sourceTree = "<group>"; };
-		DA55F4E8163D64E600CABAA5 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
-		DA55F4E9163D64E600CABAA5 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		DA55F4EB163D650600CABAA5 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		DA6B01D7166E446000F87809 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		DA6B01D9166E446800F87809 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
@@ -453,9 +453,9 @@
 				DA264D01163976CF00FAB77A /* Foundation.framework in Frameworks */,
 				DA264D03163976CF00FAB77A /* CoreGraphics.framework in Frameworks */,
 				DA55F4E6163D631600CABAA5 /* libUMFeedback.a in Frameworks */,
-				DA55F4EA163D64E600CABAA5 /* libMobClickLibrary.a in Frameworks */,
 				DA2C57DB164E3588004B201A /* UMSNSLibrary.a in Frameworks */,
 				DA4BBE54167A08A100D1ABF1 /* libGoogleAdMobAds.a in Frameworks */,
+				DA377EC617D4E7840009F1C0 /* libMobClickLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1051,8 +1051,8 @@
 		DAFFD05B163B93AC00AA9FE4 /* Anlysis */ = {
 			isa = PBXGroup;
 			children = (
-				DA55F4E8163D64E600CABAA5 /* libMobClickLibrary.a */,
-				DA55F4E9163D64E600CABAA5 /* MobClick.h */,
+				DA377EC417D4E7840009F1C0 /* libMobClickLibrary.a */,
+				DA377EC517D4E7840009F1C0 /* MobClick.h */,
 			);
 			name = Anlysis;
 			sourceTree = "<group>";

@@ -73,7 +73,7 @@
     int fontSize = 1;
     NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
     fontSize = [settings integerForKey:@"fontsize"];
-    return [NSString stringWithFormat:@"<body><font size =\"%d\">%@</body>", fontSize + 2, news];
+    return [NSString stringWithFormat:@"<body><font size =\"%d\">%@</body>", fontSize + 3, news];
 }
 
 /*

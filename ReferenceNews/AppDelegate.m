@@ -37,6 +37,15 @@
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     
+    [BPush setupChannel:launchOptions];
+    [BPush setDelegate:self];
+    
+    [application setApplicationIconBadgeNumber:0];
+    [application registerForRemoteNotificationTypes:
+     UIRemoteNotificationTypeAlert
+     | UIRemoteNotificationTypeBadge
+     | UIRemoteNotificationTypeSound];
+    
     /*
      * version 1.0 Don't show ads.
      *
@@ -95,6 +104,18 @@
     [self.window.rootViewController.navigationController pushViewController:newsViewController animated:YES];
 }
 
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    [BPush registerDeviceToken: deviceToken];
+}
+
+- (void) onMethod:(NSString*)method response:(NSDictionary*)data {
+    CLog(@"On method:%@", method);
+    CLog(@"data:%@", [data description]);
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+    [BPush handleNotification:userInfo];
+}
 #pragma mark - GADInterstitial delegate method
 - (void)interstitialDidReceiveAd:(GADInterstitial *)interstitial{
     if (interstitial.isReady) {

@@ -180,9 +180,9 @@
     UISwitch *switchBtn = (UISwitch *)sender;
     [settings setBool:switchBtn.isOn forKey:KNOTIFICATION];
     if (switchBtn.isOn) {//生成通知
-        [NotificationUtil makeLocalNotification];
+//        [NotificationUtil makeLocalNotification];
     }else{//关闭通知
-        [NotificationUtil cancelLocalNotification];
+//        [NotificationUtil cancelLocalNotification];
     }
 }
 

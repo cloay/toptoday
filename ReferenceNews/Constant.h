@@ -23,6 +23,8 @@
 #define ADUINTID @"a150c9897f6c955"
 #define WAPS_ID @"7b25af59375a1c5724593f6304d85282"
 #define APPSTORE @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=588693815"
+#define BAIDUKEY @"z1PbbRvAlC9PUGSemjt6nAhb"
+#define BAIDUSECRET @"c06Wl3iNScSVtM9w2uocKTBATtTitcDn"
 @interface Constant : NSObject
 
 //获取标题

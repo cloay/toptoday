@@ -9,7 +9,6 @@
 #import "ContentViewController.h"
 #import "MatchUtil.h"
 #import "TFHpple.h"
-#import "UMSNSService.h"
 
 @interface ContentViewController ()
 
@@ -105,7 +104,7 @@
     [super viewWillAppear:animated];
     [titleLabel scroll];
     if (errorLabel.hidden) {
-        [self.navigationController setToolbarHidden:NO animated:YES];
+//        [self.navigationController setToolbarHidden:NO animated:YES];
     }
 }
 - (void)getNewsContent{
@@ -133,12 +132,11 @@
 }
 
 - (void)showShareList{
-    NSString *shareText = [NSString stringWithFormat:@"#今日头条+#%@ appstore地址：https://itunes.apple.com/cn/app/jin-ri-tou-tiao+/id588693815?mt=8", [titleLabel.text stringByAppendingString:self.news.urlStr]];
-    [UMSNSService showSNSActionSheetInController:self.navigationController appkey:UMKEY status:shareText image:nil];
+//    NSString *shareText = [NSString stringWithFormat:@"#今日头条+#%@ appstore地址：https://itunes.apple.com/cn/app/jin-ri-tou-tiao+/id588693815?mt=8", [titleLabel.text stringByAppendingString:self.news.urlStr]];
 }
 
 - (void)showToolBar{
-    [self.navigationController setToolbarHidden:NO animated:YES];
+//    [self.navigationController setToolbarHidden:NO animated:YES];
     [self initAdmob];
 }
 

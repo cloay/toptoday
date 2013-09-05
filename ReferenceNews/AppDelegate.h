@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "GADInterstitial.h"
-#import "BPush.h"
+#import "jpush/APService.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, GADInterstitialDelegate>
 

@@ -2,11 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>PRODUCTION_MODE</key>
-	<false/>
-	<key>DEBUG</key>
-	<true/>
-	<key>API_KEY</key>
-	<string>z1PbbRvAlC9PUGSemjt6nAhb</string>
+	<key>CHANNEL</key>
+	<string>APPSTORE</string>
+	<key>APS_FOR_PRODUCTION</key>
+	<string>0</string>
+	<key>APP_KEY</key>
+	<string>4ad97b05c999d584eb2cdec8</string>
 </dict>
 </plist>

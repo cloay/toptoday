@@ -37,14 +37,13 @@
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     
-    [BPush setupChannel:launchOptions];
-    [BPush setDelegate:self];
-    
-    [application setApplicationIconBadgeNumber:0];
-    [application registerForRemoteNotificationTypes:
-     UIRemoteNotificationTypeAlert
-     | UIRemoteNotificationTypeBadge
-     | UIRemoteNotificationTypeSound];
+    // Required
+    [APService
+     registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
+                                         UIRemoteNotificationTypeSound |
+                                         UIRemoteNotificationTypeAlert)];
+    // Required
+    [APService setupWithOption:launchOptions];
     
     /*
      * version 1.0 Don't show ads.
@@ -105,16 +104,12 @@
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    [BPush registerDeviceToken: deviceToken];
+    [APService registerDeviceToken:deviceToken];
 }
 
-- (void) onMethod:(NSString*)method response:(NSDictionary*)data {
-    CLog(@"On method:%@", method);
-    CLog(@"data:%@", [data description]);
-}
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
-    [BPush handleNotification:userInfo];
+    [APService handleRemoteNotification:userInfo];
 }
 #pragma mark - GADInterstitial delegate method
 - (void)interstitialDidReceiveAd:(GADInterstitial *)interstitial{

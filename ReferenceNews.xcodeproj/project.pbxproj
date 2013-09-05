@@ -86,10 +86,11 @@
 		DA55F4E7163D631600CABAA5 /* umFeedback.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DA55F4E4163D631600CABAA5 /* umFeedback.bundle */; };
 		DA55F4EC163D650600CABAA5 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DA55F4EB163D650600CABAA5 /* libz.dylib */; };
 		DA61909D17D6177E0092AB2D /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA61909217D6177E0092AB2D /* libGoogleAdMobAds.a */; };
-		DA6190A117D61AEB0092AB2D /* libBPush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6190A017D61AEB0092AB2D /* libBPush.a */; };
-		DA6190A317D61B330092AB2D /* BPushConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA6190A217D61B330092AB2D /* BPushConfig.plist */; };
+		DA6190A317D61B330092AB2D /* PushConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA6190A217D61B330092AB2D /* PushConfig.plist */; };
 		DA6B01D8166E446000F87809 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DA6B01D7166E446000F87809 /* Default.png */; };
 		DA6B01DA166E446800F87809 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA6B01D9166E446800F87809 /* Default@2x.png */; };
+		DA85072717D8B6440068C7D2 /* libPushSDK-Simulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA85072517D8B6440068C7D2 /* libPushSDK-Simulator.a */; };
+		DA85072817D8B6440068C7D2 /* libPushSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA85072617D8B6440068C7D2 /* libPushSDK.a */; };
 		DAD4C4DD163FFE20002DF588 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD4C4CA163FFE20002DF588 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DAD4C4DE163FFE20002DF588 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD4C4CD163FFE20002DF588 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DAD4C4DF163FFE20002DF588 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD4C4CF163FFE20002DF588 /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -251,11 +252,12 @@
 		DA61909917D6177E0092AB2D /* GADCustomEventRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADCustomEventRequest.h; sourceTree = "<group>"; };
 		DA61909B17D6177E0092AB2D /* GADSearchBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADSearchBannerView.h; sourceTree = "<group>"; };
 		DA61909C17D6177E0092AB2D /* GADSearchRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADSearchRequest.h; sourceTree = "<group>"; };
-		DA61909F17D61AEB0092AB2D /* BPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPush.h; sourceTree = "<group>"; };
-		DA6190A017D61AEB0092AB2D /* libBPush.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBPush.a; sourceTree = "<group>"; };
-		DA6190A217D61B330092AB2D /* BPushConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BPushConfig.plist; sourceTree = "<group>"; };
+		DA6190A217D61B330092AB2D /* PushConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PushConfig.plist; sourceTree = "<group>"; };
 		DA6B01D7166E446000F87809 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		DA6B01D9166E446800F87809 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
+		DA85072417D8B6440068C7D2 /* APService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APService.h; sourceTree = "<group>"; };
+		DA85072517D8B6440068C7D2 /* libPushSDK-Simulator.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libPushSDK-Simulator.a"; sourceTree = "<group>"; };
+		DA85072617D8B6440068C7D2 /* libPushSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPushSDK.a; sourceTree = "<group>"; };
 		DAD4C4C9163FFE20002DF588 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		DAD4C4CA163FFE20002DF588 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		DAD4C4CB163FFE20002DF588 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -341,7 +343,8 @@
 				DA55F4E6163D631600CABAA5 /* libUMFeedback.a in Frameworks */,
 				DA377EC617D4E7840009F1C0 /* libMobClickLibrary.a in Frameworks */,
 				DA61909D17D6177E0092AB2D /* libGoogleAdMobAds.a in Frameworks */,
-				DA6190A117D61AEB0092AB2D /* libBPush.a in Frameworks */,
+				DA85072717D8B6440068C7D2 /* libPushSDK-Simulator.a in Frameworks */,
+				DA85072817D8B6440068C7D2 /* libPushSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,7 +464,7 @@
 			isa = PBXGroup;
 			children = (
 				DAFFD032163B8E8A00AA9FE4 /* Resource */,
-				DA6190A217D61B330092AB2D /* BPushConfig.plist */,
+				DA6190A217D61B330092AB2D /* PushConfig.plist */,
 				DA264D06163976CF00FAB77A /* ReferenceNews-Info.plist */,
 				DA264D07163976CF00FAB77A /* InfoPlist.strings */,
 				DA264D0A163976CF00FAB77A /* main.m */,
@@ -496,7 +499,7 @@
 		DA264D1F16397C3000FAB77A /* Public */ = {
 			isa = PBXGroup;
 			children = (
-				DA61909E17D61AEB0092AB2D /* Bpush */,
+				DA85072317D8B6440068C7D2 /* jpush */,
 				DADB4EC6167B4D4C00D37216 /* AD */,
 				DA2E4D86166CE56200E69A32 /* AHAlertView */,
 				DA2E4D73166CD1D900E69A32 /* AutoScrollView */,
@@ -719,13 +722,14 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
-		DA61909E17D61AEB0092AB2D /* Bpush */ = {
+		DA85072317D8B6440068C7D2 /* jpush */ = {
 			isa = PBXGroup;
 			children = (
-				DA61909F17D61AEB0092AB2D /* BPush.h */,
-				DA6190A017D61AEB0092AB2D /* libBPush.a */,
+				DA85072417D8B6440068C7D2 /* APService.h */,
+				DA85072517D8B6440068C7D2 /* libPushSDK-Simulator.a */,
+				DA85072617D8B6440068C7D2 /* libPushSDK.a */,
 			);
-			path = Bpush;
+			path = jpush;
 			sourceTree = "<group>";
 		};
 		DAD4C4E6163FFE47002DF588 /* Reachability */ = {
@@ -1023,7 +1027,7 @@
 				DAEF6EB616D4FBE8007F2CE3 /* Default-568h@2x.png in Resources */,
 				DA377EC217D4C9070009F1C0 /* font_icon.png in Resources */,
 				DA377EC317D4C9070009F1C0 /* font_icon@2x.png in Resources */,
-				DA6190A317D61B330092AB2D /* BPushConfig.plist in Resources */,
+				DA6190A317D61B330092AB2D /* PushConfig.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1108,7 +1112,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				OTHER_LDFLAGS = "-lxml2";
+				OTHER_LDFLAGS = (
+					"-lxml2",
+					"-all_load",
+					"-ObjC",
+				);
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
@@ -1133,7 +1141,11 @@
 				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				OTHER_LDFLAGS = "-lxml2";
+				OTHER_LDFLAGS = (
+					"-lxml2",
+					"-all_load",
+					"-ObjC",
+				);
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1162,6 +1174,7 @@
 					"\"$(SRCROOT)/ReferenceNews/admob/Add-ons/GoogleAnalyticsiOS_2.0beta3/Library\"",
 					"\"$(SRCROOT)/ReferenceNews/admob\"",
 					"\"$(SRCROOT)/ReferenceNews/Bpush\"",
+					"\"$(SRCROOT)/ReferenceNews/jpush\"",
 				);
 				OTHER_LDFLAGS = (
 					"-lxml2",
@@ -1196,6 +1209,7 @@
 					"\"$(SRCROOT)/ReferenceNews/admob/Add-ons/GoogleAnalyticsiOS_2.0beta3/Library\"",
 					"\"$(SRCROOT)/ReferenceNews/admob\"",
 					"\"$(SRCROOT)/ReferenceNews/Bpush\"",
+					"\"$(SRCROOT)/ReferenceNews/jpush\"",
 				);
 				OTHER_LDFLAGS = (
 					"-lxml2",
